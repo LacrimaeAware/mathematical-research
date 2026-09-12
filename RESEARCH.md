@@ -1,6 +1,6 @@
 # Research index
 
-[Browse the visual portfolio](https://lacrimaeaware.github.io/mathematical-investigations/) · [Repository overview](README.md)
+[Browse the visual portfolio](https://lacrimaeaware.github.io/mathematical-research/) · [Repository overview](README.md)
 
 Each proof label applies to the result described in its summary.
 
