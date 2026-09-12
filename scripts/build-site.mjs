@@ -80,7 +80,7 @@ const rows=await Promise.all(Object.entries(research.entries).map(async ([slug,e
     const title=(await readFile(path.join(root,'site/summaries',`${slug}.md`),'utf8')).split('\n')[0].replace(/^# /,'').trim();
     return `| [${title}](site/summaries/${slug}.md) | ${entry.brief} | ${entry.proof.map(key=>research.proofStatuses[key]).join(' · ')} |`;
 }));
-await writeFile(path.join(root,'RESEARCH.md'), `# Research index\n\n[Browse the visual portfolio](https://lacrimaeaware.github.io/mathematical-investigations/) · [Repository overview](README.md)\n\nEach proof label applies to the result described in its summary.\n\n| Research | Result or question | Proof status |\n|---|---|---|\n${rows.join('\n')}\n`);
+await writeFile(path.join(root,'RESEARCH.md'), `# Research index\n\n[Browse the visual portfolio](https://lacrimaeaware.github.io/mathematical-research/) · [Repository overview](README.md)\n\nEach proof label applies to the result described in its summary.\n\n| Research | Result or question | Proof status |\n|---|---|---|\n${rows.join('\n')}\n`);
 await writeFile(path.join(out,'.nojekyll'),'');
 console.log(`Built the filtered overview and ${Object.keys(research.entries).length + 1} short summaries. Output includes only public pages and their local assets.`);
 
