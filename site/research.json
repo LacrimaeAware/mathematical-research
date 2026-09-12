@@ -1,0 +1,147 @@
+{
+  "proofStatuses": {
+    "lean": "Lean-verified",
+    "written": "Written proof",
+    "explored": "Partial results"
+  },
+  "proofDescriptions": {
+    "lean": "Substantial formalization of the stated result in Lean. The explanation on each result names its scope and any external theorem interfaces.",
+    "written": "A written argument with self-review or internal proof review. The explanation identifies the result and its assumptions.",
+    "explored": "An unresolved question with established intermediate results, constructions or checked examples. The explanation states what is complete and what remains open."
+  },
+  "subjects": {
+    "number-theory": "Number theory",
+    "combinatorics": "Combinatorics",
+    "algebra": "Algebra",
+    "geometry": "Geometry",
+    "probability": "Probability",
+    "statistics": "Statistics",
+    "optimization": "Optimization"
+  },
+  "reviewedOn": "2026-09-12",
+  "sourceRevision": "0a92816afaba2c3dfb685b4357c4c350bda0dae81bc94e8578bc802a10807e97",
+  "entries": {
+    "prime-patterns": {
+      "subjects": [
+        "number-theory",
+        "combinatorics"
+      ],
+      "proof": [
+        "lean",
+        "written"
+      ],
+      "scope": "The long-gap construction is substantially formalized in Lean, including its final endpoint. Two external theorem interfaces remain: quantitative Selberg and the labelled Bennett–Frieze matching result. The written manuscript supplies the extension argument.",
+      "brief": "A growing logarithmic gain in guaranteed gaps for fixed patterns that survive small-prime tests."
+    },
+    "factor-packing": {
+      "subjects": [
+        "number-theory",
+        "algebra"
+      ],
+      "proof": [
+        "written"
+      ],
+      "scope": "Written construction and algebraic consequences, with internal proof review and exact computational checks.",
+      "brief": "Persistent factorization failures and independent families of algebraic holes."
+    },
+    "distinct-products": {
+      "subjects": [
+        "number-theory",
+        "combinatorics"
+      ],
+      "proof": [
+        "written"
+      ],
+      "scope": "Written proof with internal re-derivation of the main combinatorial and sieve steps.",
+      "brief": "An upper bound toward the triple-product case of Erdős problem 425."
+    },
+    "geometry-recovery": {
+      "subjects": [
+        "geometry",
+        "probability"
+      ],
+      "proof": [
+        "written"
+      ],
+      "scope": "Written coefficient and recovery theorems with a separate internal proof review. The bounds assume fixed complexity and separated, bounded boundaries.",
+      "brief": "Accurate Gaussian predictions force accurate polynomial coefficients and boundary geometry."
+    },
+    "hidden-stages": {
+      "subjects": [
+        "probability",
+        "statistics"
+      ],
+      "proof": [
+        "written"
+      ],
+      "scope": "Written sharp bounds and a matched-repeat estimator, internally checked for the exponential-stage model. Related geometric-stage results separately compare exact simulation, pooled estimation and checkpoint observations.",
+      "brief": "Sharp response bounds from pooled totals, and recovery from matched repeats."
+    },
+    "finite-symmetry": {
+      "subjects": [
+        "combinatorics",
+        "algebra"
+      ],
+      "proof": [
+        "written"
+      ],
+      "scope": "Written proof of the 4/9 structure theorem. Specific finite deductions are also checked in Lean; the stronger 5/11 extension is open.",
+      "brief": "Explicit conditions force seven repeating classes in a symmetric network."
+    },
+    "arithmetic-tensors": {
+      "subjects": [
+        "number-theory",
+        "algebra",
+        "probability"
+      ],
+      "proof": [
+        "written"
+      ],
+      "scope": "Written finite tensor results and an internally checked arithmetic transfer using Koymans–Smith’s external large-sieve estimates.",
+      "brief": "Distribution and rank guarantees for arrays built from relationships between primes."
+    },
+    "recurring-prime-gaps": {
+      "subjects": [
+        "number-theory"
+      ],
+      "proof": [
+        "written"
+      ],
+      "scope": "Written four-point selection law and gcd classification, internally reviewed using Merikoski’s corrected four-group sieve and a fixed CRT construction. The modular corollary also uses the finite-group structure theorem.",
+      "brief": "A four-point selection law restricts the greatest common divisor of recurring consecutive-prime gaps to 2, 4 or 6."
+    },
+    "matching-stability": {
+      "subjects": [
+        "geometry",
+        "probability"
+      ],
+      "proof": [
+        "written"
+      ],
+      "scope": "Written global matching theorem with independent internal review. Constants depend on the number of boundaries and the threshold bound, independently of ambient dimension; colliding boundaries are allowed.",
+      "brief": "A linear bound matches Gaussian decision boundaries even when coincident boundaries cancel."
+    },
+    "noisy-boundary-recovery": {
+      "subjects": [
+        "geometry",
+        "statistics"
+      ],
+      "proof": [
+        "written"
+      ],
+      "scope": "Written degree-three ambiguity and degree-four inversion for two distinct centered boundaries, Gaussian inputs and class-dependent flip rates whose sum is below one. The proof includes perturbation bounds and internally reviewed model scope.",
+      "brief": "An exact degree-three ambiguity is resolved by degree-four measurements, recovering two boundaries and both unknown noise rates."
+    },
+    "limits-of-evidence": {
+      "subjects": [
+        "number-theory",
+        "probability"
+      ],
+      "proof": [
+        "written"
+      ],
+      "scope": "Written finite probability calculation, checked internally. The badge applies to this calculation.",
+      "brief": "The exact change needed to erase a joint event while preserving its marginal rates."
+    }
+  }
+}

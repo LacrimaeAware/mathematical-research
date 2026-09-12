@@ -1,0 +1,14 @@
+{
+  "name": "mathematical-investigations",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-site.mjs",
+    "pages": "npm run build && node scripts/prepare-pages.mjs",
+    "preview": "python -m http.server 4178 --bind 127.0.0.1 --directory dist"
+  },
+  "dependencies": {
+    "katex": "0.18.7",
+    "marked": "18.0.12"
+  }
+}
