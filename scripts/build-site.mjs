@@ -73,10 +73,10 @@ await cp(path.join(root,'node_modules/katex/dist/fonts'),path.join(out,'vendor/f
 await cp(path.join(root,'node_modules/katex/LICENSE'),path.join(out,'vendor/KATEX-LICENSE.txt'));
 const informationPages = ['methods','research-workflow'];
 for(const slug of [...Object.keys(research.entries),...informationPages]){
-  let source=await readFile(path.join(root,'site/summaries',`${slug}.md`),'utf8');
+  let source=(await readFile(path.join(root,'site/summaries',`${slug}.md`),'utf8')).replace(/\r\n?/g,'\n');
   source=source.replace(/<!-- proof-scope:([\w-]+) -->[\s\S]*?<!-- \/proof-scope -->/g, (_, key) => `<!-- proof-scope:${key} -->\n${research.entries[key].scope}\n<!-- /proof-scope -->`);
   await writeFile(path.join(root,'site/summaries',`${slug}.md`),source);
-  const title=source.split('\n')[0].replace(/^# /,'');
+  const title=source.split('\n')[0].replace(/^# /,'').trim();
   let body=marked.parse(source).replace(/<table>/g,'<div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table>').replace(/<\/table>/g,'</table></div>');
   if(research.entries[slug]) body=body.replace('</h1>','</h1>'+renderTags(research.entries[slug], slug));
   body=body.replace(/href="([\w-]+)\.md(?=["#])/g, (match, target) => Object.hasOwn(research.entries,target) || informationPages.includes(target) ? `href="${target}.html` : match);
