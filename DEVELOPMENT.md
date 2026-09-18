@@ -18,11 +18,11 @@ Edit the homepage in `site/index.html`, its styles in `site/style.css`, and the 
 
 ## Research filters
 
-`site/research.json` supplies the topic order, subject filters and proof descriptions. A standalone checkout builds this committed snapshot.
+`site/research.json` supplies the topic order, subject filters and proof descriptions. A standalone checkout builds this committed snapshot. Maintainers can set `RESEARCH_REGISTRY_TOOL` to a local exporter script; the build then refreshes the snapshot before rendering and stops if export fails.
 
 The public page has one subject filter. Each card carries its own proof labels and an explanation available by hover, focus or tap. **Lean-verified** means substantial formalization of the selected result with its theorem interfaces explained. **Written proof** refers to a written argument for the particular result summarized, with self-review or internal review. Related open questions belong inside the summaries.
 
-Each metadata entry must match exactly one `data-research` card and summary page. The build generates proof badges and `RESEARCH.md` from the same snapshot. Topic scope paragraphs marked `proof-scope` are synchronized too. `README.md` is the hand-edited visual front page; `media/portfolio-preview.jpg` is a screenshot of the site.
+Each metadata entry must match exactly one `data-research` card and summary page. The build generates proof badges and `RESEARCH.md` from the same snapshot. Topic scope paragraphs marked `proof-scope` are synchronized too. `README.md` is the repository front page; `media/portfolio-preview.jpg` is a screenshot of the site.
 
 The `subject` URL parameter preserves the selection on reload and supports links to an area of mathematics. Without JavaScript, all cards remain readable.
 
@@ -35,7 +35,7 @@ npm ci
 npm run pages
 ```
 
-Review and commit the changed source and `docs/` together. The Pages preparation command refuses to write over a non-generated documentation directory. When removing a page, also remove its retired generated counterpart from `docs/` before committing. `dist/` and `node_modules/` stay untracked.
+Commit the changed source and `docs/` together. The Pages preparation command replaces the generated directory, so retired pages and downloads are removed. It refuses to replace a directory without the generated-output marker or to follow a linked output directory. `dist/` and `node_modules/` stay untracked. Run `npm run test:pages` to check these protections.
 
 The repository contains the public summaries and presentation source. The research implementations and full proof notes are maintained separately. KaTeX's license is distributed with its bundled assets.
 
