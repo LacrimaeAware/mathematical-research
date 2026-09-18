@@ -51,8 +51,8 @@ index=index.replace(/<article\b[^>]*data-research="([^"]+)"[^>]*>[\s\S]*?<\/h3>/
   return card.replace('>', ` data-subject="${entry.subjects.join(' ')}">`) + renderTags(entry, slug);
 });
 if(found.size !== Object.keys(research.entries).length) throw new Error('Research metadata and cards do not match');
-// The register orders main results, supporting results and open questions,
-// then uses editorial significance, proof level and editorial topic order.
+// Follow the register's explicit public reading order. Presentation order
+// is independent of the private contribution and proof assessments.
 const cards = new Map([...index.matchAll(/<article\b[^>]*data-research="([^"]+)"[^>]*>[\s\S]*?<\/article>/g)].map(match => [match[1], match[0]]));
 const orderedCards = Object.keys(research.entries).map((slug, i) => cards.get(slug).replace(/(<div class="card-label"><span>)\d+ \/ /, `$1${String(i + 1).padStart(2,'0')} / `)).join('\n');
 index=index.replace(/(<section class="research-grid"[^>]*>)[\s\S]*?(<\/section>)/, `$1\n${orderedCards}\n$2`);
@@ -63,19 +63,24 @@ await writeFile(path.join(out,'index.html'),index);
 await cp(path.join(root,'site/style.css'),path.join(out,'style.css'));
 await cp(path.join(root,'site/filters.js'),path.join(out,'filters.js'));
 await cp(path.join(root,'site/proof-tags.js'),path.join(out,'proof-tags.js'));
+await mkdir(path.join(out,'workflow'),{recursive:true});
+for (const file of ['README.md','research-brief.md','dependency-example.json','validate_graph.py','test_validate_graph.py','research_state.py','example-state.json','gap-comparison.md','example-handoff.md','lean_replay.py','lean-example.json','lean-example-result.json','test_lean_replay.py','engineering-roadmap.md']) {
+  await cp(path.join(root,'site/workflow',file),path.join(out,'workflow',file));
+}
 await mkdir(path.join(out,'vendor'),{recursive:true});
 await cp(path.join(root,'node_modules/katex/dist/katex.min.css'),path.join(out,'vendor/katex.min.css'));
 await cp(path.join(root,'node_modules/katex/dist/fonts'),path.join(out,'vendor/fonts'),{recursive:true});
 await cp(path.join(root,'node_modules/katex/LICENSE'),path.join(out,'vendor/KATEX-LICENSE.txt'));
-for(const slug of [...Object.keys(research.entries),'methods']){
+const informationPages = ['methods','research-workflow'];
+for(const slug of [...Object.keys(research.entries),...informationPages]){
   let source=await readFile(path.join(root,'site/summaries',`${slug}.md`),'utf8');
   source=source.replace(/<!-- proof-scope:([\w-]+) -->[\s\S]*?<!-- \/proof-scope -->/g, (_, key) => `<!-- proof-scope:${key} -->\n${research.entries[key].scope}\n<!-- /proof-scope -->`);
   await writeFile(path.join(root,'site/summaries',`${slug}.md`),source);
   const title=source.split('\n')[0].replace(/^# /,'');
   let body=marked.parse(source).replace(/<table>/g,'<div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table>').replace(/<\/table>/g,'</table></div>');
   if(research.entries[slug]) body=body.replace('</h1>','</h1>'+renderTags(research.entries[slug], slug));
-  body=body.replace(/href="([\w-]+)\.md(?=["#])/g, (match, target) => Object.hasOwn(research.entries,target) || target==='methods' ? `href="${target}.html` : match);
-  await writeFile(path.join(out,'notes',`${slug}.html`),`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escapeHtml(title)} · LacrimaeAware</title><link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="../vendor/katex.min.css"><script src="../proof-tags.js" defer></script></head><body><main class="note"><a class="back" href="../index.html">← Independent Mathematical Research</a>${body}<p class="note-footer">Unrefereed work. External priority is unestablished.</p></main></body></html>`);
+  body=body.replace(/href="([\w-]+)\.md(?=["#])/g, (match, target) => Object.hasOwn(research.entries,target) || informationPages.includes(target) ? `href="${target}.html` : match);
+  await writeFile(path.join(out,'notes',`${slug}.html`),`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escapeHtml(title)} · LacrimaeAware</title><link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="../vendor/katex.min.css"><script src="../proof-tags.js" defer></script></head><body><main class="note"><a class="back" href="../index.html">← Independent Mathematical Research</a>${body}<p class="note-footer">LacrimaeAware · AI-assisted research. <a href="research-workflow.html">Research process and tools</a> · <a href="methods.html">Proof labels and verification</a></p></main></body></html>`);
 }
 const rows=await Promise.all(Object.entries(research.entries).map(async ([slug,entry])=>{
     const title=(await readFile(path.join(root,'site/summaries',`${slug}.md`),'utf8')).split('\n')[0].replace(/^# /,'').trim();
@@ -83,5 +88,5 @@ const rows=await Promise.all(Object.entries(research.entries).map(async ([slug,e
 }));
 await writeFile(path.join(root,'RESEARCH.md'), `# Research index\n\n[Browse the visual portfolio](https://lacrimaeaware.github.io/mathematical-research/) · [Repository overview](README.md)\n\nEach proof label applies to the result described in its summary.\n\n| Research | Result or question | Proof status |\n|---|---|---|\n${rows.join('\n')}\n`);
 await writeFile(path.join(out,'.nojekyll'),'');
-console.log(`Built the filtered overview and ${Object.keys(research.entries).length + 1} short summaries. Output includes only public pages and their local assets.`);
+console.log(`Built the filtered overview and ${Object.keys(research.entries).length + informationPages.length} summaries and case studies. Output includes only public pages and their local assets.`);
 

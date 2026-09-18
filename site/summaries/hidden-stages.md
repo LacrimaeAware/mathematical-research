@@ -1,33 +1,37 @@
-# What a repeated observation reveals about hidden stages
+# How many repeats reveal hidden stages?
 
-Suppose a task finishes after two hidden waiting stages. You observe the total time, but different members of the population have different stage speeds. Can those totals tell you what would happen if both stages were sped up?
+Suppose a task finishes after several hidden waiting stages. Only the total time is visible, and different members of the population have different stage counts and speeds. Can repeated observations reveal the hidden population—and predict what happens when every stage speeds up?
 
-This belongs to a broader statistical question: what can repeated observations reveal about a heterogeneous population? [Wei and Nguyen](https://arxiv.org/abs/2004.05542) study identification and estimation in models built from repeated observations of latent types.
+## An exact observation threshold
 
-## Result
+For populations with **at most $m$ independent exponential stages**, $m$ matched completion times identify the population's joint distribution of stage count and unordered stage rates. Each matched group shares the same hidden type, with independent waiting times across runs.
 
-An explicit construction gives populations with **exactly the same baseline completion-time distribution but different responses to a speed-up**. Even knowing the baseline distribution perfectly leaves information missing.
+The threshold is sharp: with $m-1$ matched totals, two populations can give exactly the same observations but different responses to an additive rate increase. The construction works for any positive deadline and positive boost.
 
-The accompanying proof establishes a sharp lower bound for the completion probability after an additive increase in stage rates. A compatible population attains the bound, so it describes the best guarantee available from those pooled totals.
+For two stages, this means **two runs—one matched repeat—suffice**. Pooled totals alone can leave the intervention response undetermined even when their distribution is known exactly.
 
-For two stages, **one matched repeat supplies enough information to estimate the actual response**. The two runs share the same hidden stage rates. An explicit unbiased statistic uses their totals directly, and an extension controls the estimated completion curve across all deadlines at a fixed rate boost.
+## Estimating the response directly
 
-## The model and guarantee
+The intervention adds a known rate $\theta$ to each stage. An explicit unbiased statistic uses matched totals to estimate the resulting completion probability, with a uniform guarantee when the hidden rates have a positive lower bound.
 
-The stages have independent exponential waiting times conditional on their hidden rates. The intervention adds a known rate $\theta$ to each stage. Repeats preserve the hidden rate pair.
-
-With a positive rate floor $\ell$, the number of matched panels needed for error $\varepsilon$ at fixed confidence has order
+In the two-stage case, with rate floor $\ell$, the number of matched panels needed for error $\varepsilon$ at fixed confidence has order
 
 $$O\!\left((1+\theta/\ell)\varepsilon^{-2}\right).$$
 
-A matching lower bound holds in the specified difficult regime. These are mathematical guarantees for this stage model.
+A matching lower bound holds in the specified difficult regime. The two-stage study also gives sharp bounds on intervention response from pooled totals and an extension to simultaneous estimation across deadlines.
 
-## Related results: what a checkpoint changes
+## Connection to existing work
 
-A related discrete-time model uses independent geometric stages and multiplies each stage’s success probability by a known factor. Here the exact total-time distribution identifies the accelerated law. A simulation theorem shows that no algorithm with a fixed cap on baseline records can reproduce that speed-up exactly across the allowed parameter range.
+[Vandermeulen and Scott](https://arxiv.org/abs/1607.00071) study mixture identification from grouped observations, with thresholds controlled by the number of mixture components. [Wei and Nguyen](https://arxiv.org/abs/2004.05542) study identification and estimation from repeated observations of latent types.
 
-Separate upper and lower bounds compare observation designs. In explicit difficult examples, one intermediate checkpoint removes the growth in episode count caused by a long known block of stages. These written results distinguish identifying a speed-up from estimating it efficiently, and show why the location of an observation can matter.
+Here the controlling quantity is the **number of exponential stages within each type**. The population may mix arbitrarily many types, the number of stages can be unknown, and repeated rates are allowed. The proof uses the special transform structure of exponential sums to obtain the stage-count threshold.
 
-## Approach
+## Related result: what a checkpoint changes
 
-The argument compares populations that are indistinguishable from pooled totals, derives the sharp envelope, and uses the joint law of matched repeats to recover the missing response. Separate internal checks cover the estimator, its observation cost and its lower bound.
+A separate discrete-time model uses independent geometric stages and multiplies their success probabilities by a known factor. Its exact total-time distribution identifies the accelerated law. An intermediate checkpoint can also reduce the observation cost: in explicit examples, one checkpoint removes the growth in episode count caused by a long known block of stages.
+
+## Proof scope
+
+<!-- proof-scope:hidden-stages -->
+Written, self-reviewed threshold for populations with at most m exponential stages: m matched totals identify the hidden stage count and unordered rates, while m−1 can fail. Uniform estimator guarantees assume a positive rate floor. Exact identity checks supplement the proof.
+<!-- /proof-scope -->

@@ -1,0 +1,83 @@
+{
+  "description": "Simplified dependency map of two routes to the original fixed-pattern sieve gap bound. Each node abbreviates a full mathematical statement in the linked research note. This file is a worked structural example, not a proof certificate.",
+  "root": "original_bound",
+  "status_vocabulary": [
+    "written_argument",
+    "external_input",
+    "formal_deduction_with_inputs"
+  ],
+  "nodes": [
+    {
+      "id": "original_bound",
+      "label": "Fixed admissible H, k >= 2: G_H(x) >>_H x(log x)^k / log log x",
+      "status": "written_argument"
+    },
+    {
+      "id": "matching_route",
+      "label": "Original matching construction yields the original bound",
+      "status": "formal_deduction_with_inputs",
+      "evidence": "main_gap_v6_cleanup; explicit Selberg and labelled matching inputs"
+    },
+    {
+      "id": "rankin_route",
+      "label": "The larger Rankin bound implies the original bound for fixed k >= 2",
+      "status": "written_argument"
+    },
+    {
+      "id": "selberg",
+      "label": "Fixed-dimensional Selberg upper bound with the required uniformity",
+      "status": "external_input"
+    },
+    {
+      "id": "labelled_matching",
+      "label": "Quantitative matching result for repeated, labelled edges",
+      "status": "external_input"
+    },
+    {
+      "id": "covering",
+      "label": "Covering reduction and parameter choices for the matching construction",
+      "status": "formal_deduction_with_inputs"
+    },
+    {
+      "id": "smooth_numbers",
+      "label": "Smooth-number estimate at the chosen Rankin parameters",
+      "status": "external_input"
+    },
+    {
+      "id": "fixed_shift_rankin",
+      "label": "Fixed-shift covering, exception count and comparison of gap scales",
+      "status": "written_argument"
+    }
+  ],
+  "edges": [
+    {
+      "from": [
+        "selberg",
+        "labelled_matching",
+        "covering"
+      ],
+      "to": "matching_route",
+      "logic": "AND"
+    },
+    {
+      "from": [
+        "selberg",
+        "smooth_numbers",
+        "fixed_shift_rankin"
+      ],
+      "to": "rankin_route",
+      "logic": "AND"
+    },
+    {
+      "from": [
+        "matching_route",
+        "rankin_route"
+      ],
+      "to": "original_bound",
+      "logic": "OR"
+    }
+  ],
+  "sources": [
+    "https://lacrimaeaware.github.io/mathematical-research/notes/prime-patterns.html"
+  ]
+}

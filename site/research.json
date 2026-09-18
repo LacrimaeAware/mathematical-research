@@ -18,31 +18,32 @@
     "statistics": "Statistics",
     "optimization": "Optimization"
   },
-  "reviewedOn": "2026-09-12",
-  "sourceRevision": "0a92816afaba2c3dfb685b4357c4c350bda0dae81bc94e8578bc802a10807e97",
+  "reviewedOn": "2026-09-16",
+  "presentationUpdatedOn": "2026-09-17",
+  "sourceRevision": "02b13fe4d389d090adb22302b2aac9f3ed01886d15e0775fce64551b1414768e",
   "entries": {
-    "prime-patterns": {
+    "geometry-recovery": {
       "subjects": [
-        "number-theory",
-        "combinatorics"
+        "geometry",
+        "probability"
       ],
       "proof": [
-        "lean",
         "written"
       ],
-      "scope": "The long-gap construction is substantially formalized in Lean, including its final endpoint. Two external theorem interfaces remain: quantitative Selberg and the labelled Bennett–Frieze matching result. The written manuscript supplies the extension argument.",
-      "brief": "A growing logarithmic gain in guaranteed gaps for fixed patterns that survive small-prime tests."
+      "scope": "Written coefficient stability, convex moment reconstruction and sample-recovery bounds for fixed complexity and separated, bounded boundaries. The core theorem has a separate internal proof review; the later sampling and conditioning results have recorded self-checks.",
+      "brief": "Dimension-independent coefficient stability, convex reconstruction from label moments, and recovery bounds for corrupted samples."
     },
-    "factor-packing": {
+    "multiplication-tables": {
       "subjects": [
         "number-theory",
+        "combinatorics",
         "algebra"
       ],
       "proof": [
         "written"
       ],
-      "scope": "Written construction and algebraic consequences, with internal proof review and exact computational checks.",
-      "brief": "Persistent factorization failures and independent families of algebraic holes."
+      "scope": "Complete written stabilization argument, a separate internal review and exact finite checks. The sharp lower bound concerns selected alphabets; the upper bound also applies to the complete multiplication table. The proof uses established circuit-to-stabilization and Hilbert-series results.",
+      "brief": "A sharp worst-alphabet scale for polynomial stabilization, including an improved upper bound for the complete multiplication table."
     },
     "distinct-products": {
       "subjects": [
@@ -55,16 +56,27 @@
       "scope": "Written proof with internal re-derivation of the main combinatorial and sieve steps.",
       "brief": "An upper bound toward the triple-product case of Erdős problem 425."
     },
-    "geometry-recovery": {
+    "finite-symmetry": {
       "subjects": [
-        "geometry",
-        "probability"
+        "combinatorics",
+        "algebra"
       ],
       "proof": [
         "written"
       ],
-      "scope": "Written coefficient and recovery theorems with a separate internal proof review. The bounds assume fixed complexity and separated, bounded boundaries.",
-      "brief": "Accurate Gaussian predictions force accurate polynomial coefficients and boundary geometry."
+      "scope": "Written proof of the 4/9 structure theorem and its exact extremal consequences in the specified finite abelian groups. Specific finite density, quotient and fibre deductions are also checked in Lean.",
+      "brief": "Index-seven structure and exact extremal Cayley graphs in specified finite abelian groups."
+    },
+    "factor-packing": {
+      "subjects": [
+        "number-theory",
+        "algebra"
+      ],
+      "proof": [
+        "written"
+      ],
+      "scope": "Written arithmetic repair and depth arguments with recorded internal reviews. A separate, self-checked correction of an earlier multiplication-table example gives larger families of missing elements and associated Picard-group consequences.",
+      "brief": "Persistent factorization obstructions, larger families of missing elements, and a positive-proportion depth deficit."
     },
     "hidden-stages": {
       "subjects": [
@@ -74,31 +86,8 @@
       "proof": [
         "written"
       ],
-      "scope": "Written sharp bounds and a matched-repeat estimator, internally checked for the exponential-stage model. Related geometric-stage results separately compare exact simulation, pooled estimation and checkpoint observations.",
-      "brief": "Sharp response bounds from pooled totals, and recovery from matched repeats."
-    },
-    "finite-symmetry": {
-      "subjects": [
-        "combinatorics",
-        "algebra"
-      ],
-      "proof": [
-        "written"
-      ],
-      "scope": "Written proof of the 4/9 structure theorem. Specific finite deductions are also checked in Lean; the stronger 5/11 extension is open.",
-      "brief": "Explicit conditions force seven repeating classes in a symmetric network."
-    },
-    "arithmetic-tensors": {
-      "subjects": [
-        "number-theory",
-        "algebra",
-        "probability"
-      ],
-      "proof": [
-        "written"
-      ],
-      "scope": "Written finite tensor results and an internally checked arithmetic transfer using Koymans–Smith’s external large-sieve estimates.",
-      "brief": "Distribution and rank guarantees for arrays built from relationships between primes."
+      "scope": "Written, self-reviewed threshold for populations with at most m exponential stages: m matched totals identify the hidden stage count and unordered rates, while m−1 can fail. Uniform estimator guarantees assume a positive rate floor. Exact identity checks supplement the proof.",
+      "brief": "An exact matched-repeat threshold for hidden exponential stages, with direct recovery of intervention responses."
     },
     "recurring-prime-gaps": {
       "subjects": [
@@ -109,6 +98,18 @@
       ],
       "scope": "Written four-point selection law and gcd classification, internally reviewed using Merikoski’s corrected four-group sieve and a fixed CRT construction. The modular corollary also uses the finite-group structure theorem.",
       "brief": "A four-point selection law restricts the greatest common divisor of recurring consecutive-prime gaps to 2, 4 or 6."
+    },
+    "arithmetic-tensors": {
+      "subjects": [
+        "number-theory",
+        "algebra",
+        "probability"
+      ],
+      "proof": [
+        "written"
+      ],
+      "scope": "Written finite tensor results and an internally checked arithmetic transfer using external Koymans–Smith estimates. The later elliptic-curve deduction has written source reconstruction and exact finite self-checks, conditional on the named Cassels-pairing and analytic inputs.",
+      "brief": "Distribution and rank guarantees for prime-symbol arrays, with a further application to quadratic twists of an elliptic curve."
     },
     "matching-stability": {
       "subjects": [
@@ -131,6 +132,18 @@
       ],
       "scope": "Written degree-three ambiguity and degree-four inversion for two distinct centered boundaries, Gaussian inputs and class-dependent flip rates whose sum is below one. The proof includes perturbation bounds and internally reviewed model scope.",
       "brief": "An exact degree-three ambiguity is resolved by degree-four measurements, recovering two boundaries and both unknown noise rates."
+    },
+    "prime-patterns": {
+      "subjects": [
+        "number-theory",
+        "combinatorics"
+      ],
+      "proof": [
+        "lean",
+        "written"
+      ],
+      "scope": "The original matching-based gap bound is substantially formalized in Lean, conditional on quantitative Selberg and labelled Bennett–Frieze inputs. A separate written Rankin-style adaptation gives the larger bound displayed in the comparison.",
+      "brief": "Two fixed-pattern sieve-gap constructions, with the original conditional deduction formalized in Lean."
     },
     "limits-of-evidence": {
       "subjects": [

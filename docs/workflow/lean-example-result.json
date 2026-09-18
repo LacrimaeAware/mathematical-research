@@ -1,0 +1,44 @@
+{
+  "problem": "addition-replay-smoke-test",
+  "statement": "\u2200 n : Nat, n + 0 = n",
+  "lean_version": "Lean (version 4.34.0, x86_64-w64-windows-gnu, commit 293d5d0c0c3f3dded4688b3ccd6a33939ac5102b, Release)",
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "timeout_seconds": 30,
+  "results": [
+    {
+      "id": "wrong-orientation",
+      "source_sha256": "404a38b82fd29c6a67fe1fa15ecc51ada48f0520677f3994f7324cc7ab3140d7",
+      "accepted": false,
+      "exit_code": 1,
+      "axioms": [
+        "sorryAx"
+      ],
+      "diagnostics": "Candidate.lean:6:2: error: Type mismatch\n  Nat.zero_add n\nhas type\n  0 + n = n\nbut is expected to have type\n  n + 0 = n\nPortfolioCandidate (n : Nat) : n + 0 = n\n'PortfolioCandidate' depends on axioms: [sorryAx]",
+      "timed_out": false
+    },
+    {
+      "id": "placeholder",
+      "source_sha256": "71972dc8f6eff5d4e0b7bcc7cd774c7b8826867a2889b44816dfcd1f3411c4f4",
+      "accepted": false,
+      "exit_code": 1,
+      "axioms": [
+        "sorryAx"
+      ],
+      "diagnostics": "Candidate.lean:3:8: error: declaration uses `sorry`\nPortfolioCandidate (n : Nat) : n + 0 = n\n'PortfolioCandidate' depends on axioms: [sorryAx]",
+      "timed_out": false
+    },
+    {
+      "id": "repaired",
+      "source_sha256": "09bbed90e26f5ed6f70b8d2d5e8e17a1dd5cb9606726946ac6b515f543330431",
+      "accepted": true,
+      "exit_code": 0,
+      "axioms": [],
+      "diagnostics": "PortfolioCandidate (n : Nat) : n + 0 = n\n'PortfolioCandidate' does not depend on any axioms",
+      "timed_out": false
+    }
+  ]
+}

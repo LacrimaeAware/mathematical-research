@@ -1,0 +1,11 @@
+{
+  "id": "addition-replay-smoke-test",
+  "description": "An engineering smoke test: an incorrect proof, a placeholder, and a valid proof for the same fixed statement. Not a research benchmark.",
+  "imports": [],
+  "statement": "∀ n : Nat, n + 0 = n",
+  "candidates": [
+    {"id": "wrong-orientation", "proof": "by\n  intro n\n  exact Nat.zero_add n"},
+    {"id": "placeholder", "proof": "by\n  sorry"},
+    {"id": "repaired", "proof": "by\n  intro n\n  rfl"}
+  ]
+}

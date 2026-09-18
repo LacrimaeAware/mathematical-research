@@ -1,29 +1,45 @@
 # Recovering hidden boundaries from accurate predictions
 
-A classifier can predict the right labels without making its reasoning easy to inspect. A more mathematical question is whether accurate predictions can force it to recover the underlying geometry. Work such as [Diakonikolas, Kane and Stewart’s *Learning Geometric Concepts with Nasty Noise*](https://arxiv.org/abs/1707.01242) studies how geometric rules can be learned from imperfect observations.
+A classifier can predict the right labels without making its underlying rule easy to inspect. This project asks when accurate predictions also determine the geometry: a collection of straight boundaries, with the label changing whenever a point crosses one of them.
 
-The model considered here uses rules formed from several straight boundaries: the label changes whenever a point crosses one of them. The observations follow a Gaussian distribution.
+For Gaussian observations and a fixed number of separated boundaries, the main theorem turns small prediction error into **linearly small coefficient error**, independently of the surrounding dimension. The current manuscript develops this into convex reconstruction from label measurements and recovery guarantees for corrupted samples.
 
-## Result
+## The coefficient guarantee
 
-The theorem establishes that, under explicit separation and degree conditions, **small prediction error forces small coefficient error**. The constant in this guarantee is independent of the number of surrounding coordinates. A predictor may use extra coordinates and need not already have the correct factorized form.
-
-This connects getting the answers right to recovering the mathematical rule that produced them. Related results give a convex reconstruction procedure from low-degree label measurements, followed by recovery of the individual boundaries.
-
-## The guarantee
-
-Let $P$ be a normalized product of $r$ distinct affine linear factors, with bounded thresholds and separation at least $\eta$. For a normalized polynomial $Q$ of degree at most $r$, sufficiently small Gaussian sign error $\varepsilon$ implies
+Let $P$ be a normalized product of $r$ distinct affine linear factors, with threshold magnitudes at most $T$ and separation at least $\eta$. For a normalized polynomial $Q$ of degree at most $r$, sufficiently small Gaussian sign error $\varepsilon$ implies
 
 $$\|Q-P\|_2\le C(r,T,\eta)\,\varepsilon.$$
 
-Here $T$ bounds the thresholds. In an orthonormal Gaussian polynomial basis, this norm measures the distance between the complete coefficient vectors. The guarantee holds with $r$, $T$ and $\eta$ fixed as the ambient dimension changes.
+The norm is Gaussian $L^2$, equivalently the Euclidean distance between coefficients in an orthonormal Hermite basis. A predictor may use extra coordinates and need not already have the correct factorized form. The constant is uniform in the ambient dimension when $r$, $T$ and $\eta$ are fixed.
 
-## Related results
+## From measurements to boundaries
 
-[Matching stability](matching-stability.md) handles boundaries that collide or cancel, giving a linear bound on how closely their parameters must pair. [Recovery with unknown label noise](noisy-boundary-recovery.md) identifies a precise information threshold: third-degree measurements can leave two models indistinguishable, while fourth-degree measurements recover both boundaries and their error rates.
+Low-degree label moments summarize how the labels correlate with polynomial features. Given the complete vector of these moments through degree $r$, a convex reconstruction procedure recovers the coefficients and then the individual boundaries. Moment error $\delta$ and optimization tolerance $\tau$ give recovery error $O_{r,T,\eta}(\delta+\tau)$.
 
-## Approach
+The normalization matters. In a quadratic example with true boundaries at $-1$ and $1$, directly treating the label moments as polynomial coefficients puts the boundaries near $\pm1.32477$ and misclassifies about 13.2% of observations. The convex reconstruction recovers the target from the same exact moments.
 
-Near a true boundary, the target label switches sides. A predictor that misses the boundary must make mistakes on a region of positive probability. The proof turns that observation into coefficient estimates, then separates the relevant coordinates from the surrounding ones.
+Combining the reconstruction with robust moment estimation gives a polynomial-time procedure, for fixed model parameters, with error
 
-The work includes written proofs, an internal review of the coefficient theorem, and numerical recovery experiments. The dependence on the number and separation of boundaries remains an important question for practical computation.
+$$O_{r,T,\eta}\!\left(\xi\log(1/\xi)^{r/2}+\tau\right)$$
+
+under a small adversarial replacement fraction $\xi$. The robust estimation input comes from [Diakonikolas, Kane and Stewart, *Learning Geometric Concepts with Nasty Noise*](https://arxiv.org/abs/1707.01242); the coefficient and boundary recovery argument is the part developed here.
+
+## What the recent sample analysis adds
+
+The manuscript also compares recovering from moments with fitting the observations directly. If $m$ of $N$ observations are replaced, an empirical sign-error minimizer satisfies a coefficient bound of order
+
+$$O_{r,T,\eta}\!\left(\frac{m}{N}+\frac{M\log N+\log(1/\beta)}{N}\right),\qquad M=\binom{n+r}{r},$$
+
+with probability at least $1-\beta$, in the small-error regime. Here $n$ is the input dimension. This is a statistical guarantee for an empirical minimizer; the polynomial-time construction above uses moments.
+
+A two-boundary example gives a raw-sample lower bound of order $(m+1)/N$. A separate conditioning calculation quantifies how moment inversion becomes less stable as two boundaries approach one another. Together these results distinguish the cost of limited measurements from the cost of noisy observations.
+
+## Proof and related work
+
+Near a true boundary, the label switches sides. The proof turns the probability of missed sign changes into coefficient estimates, then separates the relevant coordinates from the surrounding ones. Convex reconstruction uses the curvature of a Gaussian absolute-value objective.
+
+<!-- proof-scope:geometry-recovery -->
+Written coefficient stability, convex moment reconstruction and sample-recovery bounds for fixed complexity and separated, bounded boundaries. The core theorem has a separate internal proof review; the later sampling and conditioning results have recorded self-checks.
+<!-- /proof-scope -->
+
+[Matching stability](matching-stability.md) handles boundaries that collide or cancel. [Recovery with unknown label noise](noisy-boundary-recovery.md) gives a measurement threshold for recovering two boundaries together with their error rates.

@@ -18,8 +18,16 @@ $$\pi^{-1}\{0,c,-c\}\subseteq D.$$
 
 The density counts the allowed differences in $D$, including zero.
 
-## Approach
+## An exact extremal consequence
+
+An extremal consequence makes the structure concrete. If $7$ divides $N=|G|$ and $N$ is coprime to $6$, a $K_4$-free Cayley graph on $G$ has maximum degree exactly $4N/7$, hence at most $2N^2/7$ edges. Every maximizer is obtained by pulling back the complement of a seven-cycle from a quotient of order seven.
+
+## Proof
 
 The proof translates the network condition into restrictions on differences between group elements. Structure theorems from additive combinatorics narrow the possible arrangements to repeating classes. The remaining case analysis identifies which arrangements are compatible with the density bound, leading to the seven-class pattern.
 
-The Lean development includes a density constraint and the exclusion of a possible five-class case. Python calculations provide small examples against which to check the structural picture.
+The Lean development checks the private-set and aperiodic quotient construction, local fibre inequalities, and further finite deductions. Python calculations provide exact small examples against which to check the structural picture.
+
+<!-- proof-scope:finite-symmetry -->
+Written proof of the 4/9 structure theorem and its exact extremal consequences in the specified finite abelian groups. Specific finite density, quotient and fibre deductions are also checked in Lean.
+<!-- /proof-scope -->

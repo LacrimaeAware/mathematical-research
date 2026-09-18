@@ -2,13 +2,16 @@
 <p>Python code supports example searches, algorithm comparisons and exact calculations. Lean provides a language for formal proofs that a small logical kernel can check, from the definitions through the stated conclusion.</p>
 <h2>Python</h2>
 <p>The work includes integer-factorization searches, divisibility experiments, geometric recovery experiments and finite probability models. For factor packing, the checks compare two independent algorithms on 720 small problems and verify the constructions used in the threshold result. Other checks cover finite graph counts and exact probability distributions.</p>
+<p>The research workflow also uses Python to validate dependency maps and compare recorded source hashes with current files. One retained map has 195 nodes and 45 dependency edges and passes its structural validator. These checks support navigation and consistency across a long investigation.</p>
 <h2>Lean</h2>
 <!-- proof-scope:prime-patterns -->
-<p>The long-gap construction is substantially formalized in Lean, including its final endpoint. Two external theorem interfaces remain: quantitative Selberg and the labelled Bennett–Frieze matching result. The written manuscript supplies the extension argument.</p>
-<!-- /proof-scope --><p>The final gap theorem’s kernel audit reports only Lean’s standard logical axioms, with no placeholder-proof axiom. This checks the formal deductions from the two named inputs.</p>
+<p>The original matching-based gap bound is substantially formalized in Lean, conditional on quantitative Selberg and labelled Bennett–Frieze inputs. A separate written Rankin-style adaptation gives the larger bound displayed in the comparison.</p>
+<!-- /proof-scope --><p>The recorded kernel audit for <code>main_gap_v6_cleanup</code> reports only Lean’s standard logical axioms, with no placeholder-proof axiom. This checks the formal deductions from the two named inputs.</p>
 <p>The finite-symmetry development also formalizes specific density, quotient-class and fibre deductions. Its full structure theorem has a written proof.</p>
 <h2>Proof labels</h2>
 <p><strong>Lean-verified</strong> means substantial formalization of the result being presented. Each badge explains the scope and any external theorem interfaces.</p>
 <p><strong>Written proof</strong> means a written argument for the specific result described, with self-review or internal proof review. Related open questions are identified in the summaries. This label does not describe every claim in the broader project.</p>
 <p><a href="prime-patterns.html">Prime-pattern result</a> · <a href="finite-symmetry.html">Finite-symmetry result</a> · <a href="factor-packing.html">Factorization result</a></p>
-<p class="note-footer">Unrefereed work. External priority is unestablished.</p></main></body></html>
+<h2>AI assistance and workflow design</h2>
+<p>I use AI for derivations, literature comparison, code and editing. My role includes choosing the questions, designing the research prompts and dependency maps, directing tests and revisions, and organizing the handoffs between sessions. The <a href="research-workflow.html">workflow case study</a> shows the prototype, an example graph and a reusable research brief.</p>
+<p class="note-footer">LacrimaeAware · AI-assisted research. <a href="research-workflow.html">Research process and tools</a> · <a href="methods.html">Proof labels and verification</a></p></main></body></html>

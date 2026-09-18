@@ -45,4 +45,25 @@
 .note .research-tags{margin-top:-6px;margin-bottom:26px}.note .research-tags li{font-size:12px}
 .research-empty{padding:36px 24px;text-align:center;border:1px solid var(--line);background:var(--paper)}
 .research-empty p{margin:0 0 12px;font-size:16px}
+.card>.evidence-table{width:100%;margin-bottom:21px}
+.workflow-section{margin-top:48px;padding:34px 0 10px;border-top:1px solid var(--ink);scroll-margin-top:24px}
+.workflow-heading{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:end}
+.workflow-heading h2{font:36px/1.2 var(--serif);letter-spacing:-.025em;margin-bottom:0;max-width:470px}
+.workflow-heading>p{font-size:15px;margin:0;color:var(--muted)}
+.workflow-parts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:25px;margin:28px 0 22px}
+.workflow-parts>div{border-top:2px solid #b3c5ac;padding-top:16px}
+.workflow-parts span{font-size:11px;letter-spacing:.08em;color:var(--green)}
+.workflow-parts h3{font:24px/1.25 var(--serif);margin:9px 0 11px}
+.workflow-parts p{font-size:14px;color:var(--muted);margin:0}
+.workflow-links{display:flex;flex-wrap:wrap;gap:12px 28px;font-size:14px;font-weight:600}
+.dependency-demo{background:var(--light);padding:22px;border:1px solid var(--line);margin:24px 0}
+.dependency-target{max-width:350px;text-align:center;margin:22px auto 0;border:1px solid #a7b5a2;background:white;padding:13px}
+.dependency-target span,.dependency-target strong{display:block}
+.dependency-target span{font-size:13px;color:var(--muted)}
+.dependency-premises{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.dependency-premises>div{border-top:2px solid var(--green);background:white;padding:17px;display:flex;flex-direction:column;gap:7px}
+.dependency-premises small{font-size:12px;color:var(--muted)}
+.dependency-premises span{font-size:12px}.state-complete{color:var(--green)}.state-open{color:#81552a}
+.dependency-demo>p{font-size:12px;color:var(--muted);margin:16px 0 0}
+@media(max-width:750px){.workflow-heading,.workflow-parts{grid-template-columns:1fr;gap:20px}.workflow-heading h2{font-size:31px}.workflow-parts{gap:23px}.dependency-premises{grid-template-columns:1fr}.dependency-demo{padding:16px}}
 @media(max-width:750px){.filter-row{align-items:flex-start;gap:8px;flex-direction:column}.research-filters{gap:15px;padding-bottom:20px}.filter-label{flex:auto}.filter-options button{min-height:40px;padding:9px 12px}.section-title>span#research-count{display:inline;font-size:11px}.section-title{gap:12px}.section-title h2{font-size:18px}}
