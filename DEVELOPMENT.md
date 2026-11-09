@@ -4,6 +4,8 @@ The website uses static HTML and CSS. Markdown summaries are rendered with Marke
 
 Public pages showcase mathematical investigations and experiments. Present workflow material as notes on those investigations. Keep setup instructions, reusable templates and proposed software integrations in the technical references.
 
+Keep one concise AI disclosure on the computation and proof page, with a plain link from the homepage footer. Result notes should focus on the mathematics. Give each information page a distinct purpose rather than repeating process explanations or linking them to one another as justification.
+
 ## Preview
 
 With Node.js 20 or later, npm and Python installed:

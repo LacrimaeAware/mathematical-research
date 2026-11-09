@@ -1,12 +1,8 @@
 # Computation and formal proof
 
-Python code supports example searches, algorithm comparisons and exact calculations. Lean provides a language for formal proofs that a small logical kernel can check, from the definitions through the stated conclusion.
-
 ## Python
 
 The work includes integer-factorization searches, divisibility experiments, geometric recovery experiments and finite probability models. For factor packing, the checks compare two independent algorithms on 720 small problems and verify the constructions used in the threshold result. Other checks cover finite graph counts and exact probability distributions.
-
-Some Python checks help track dependencies and changes to source files.
 
 ## Lean
 
@@ -26,6 +22,4 @@ The finite-symmetry development also formalizes specific density, quotient-class
 
 [Prime-pattern result](prime-patterns.md) · [Finite-symmetry result](finite-symmetry.md) · [Factorization result](factor-packing.md)
 
-## AI assistance
-
-I use AI for derivations, literature comparison, code and editing. The [research notes](research-workflow.md) describe how questions, sources and results are recorded.
+<p id="ai-assistance">AI assists with derivations, literature comparison, code and editing.</p>

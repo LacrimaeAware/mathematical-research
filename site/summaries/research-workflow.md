@@ -1,17 +1,13 @@
-# Research notes and current directions
+# Current mathematical questions
 
-These pages collect mathematical questions, written arguments and computational experiments.
+## Factor recovery with outliers
 
-AI assists with derivations, literature searches, implementation and editing.
+Can shared factors and unequal background noise be separated when observations contain outliers and widely varying magnitudes? Current work asks which recovery guarantees can lead to a feasible method with reproducible comparisons.
 
-## Current work
+## Convolution stability
 
-Recent work studies robust factor recovery: estimating shared directions and unequal background noise from observations with outliers and highly variable magnitudes. The next planned step is to compare the written recovery guarantee with existing methods and define a reproducible validation task.
+How close is a probability distribution to an exactly stable one when convolution with itself changes it only slightly? This investigation considers quantitative bounds for finite groups and related finite quantum settings.
 
-Separate investigations study convolution stability, asking how close a distribution is to an exactly stable one when convolving it with itself changes it only slightly, and robust learning from corrupted labels.
+## Learning from corrupted observations
 
-## Keeping track of the investigations
-
-Source notes connect each question with published results and their assumptions. Written arguments and computational checks record what an approach establishes and where it fails. Bibliography entries, comparison workbooks and saved dependencies help keep track of open questions across investigations.
-
-[Computation and proof checks](methods.md)
+What can be recovered from Gaussian observations when some complete rows, including their labels, have been replaced? This work compares recovery guarantees with restrictions on the measurements or computations an algorithm can use.
