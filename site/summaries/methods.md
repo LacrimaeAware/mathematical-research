@@ -6,7 +6,7 @@ Python code supports example searches, algorithm comparisons and exact calculati
 
 The work includes integer-factorization searches, divisibility experiments, geometric recovery experiments and finite probability models. For factor packing, the checks compare two independent algorithms on 720 small problems and verify the constructions used in the threshold result. Other checks cover finite graph counts and exact probability distributions.
 
-The research workflow also uses Python to validate dependency maps and compare recorded source hashes with current files. One retained map has 195 nodes and 45 dependency edges and passes its structural validator. These checks support navigation and consistency across a long investigation.
+Some Python checks help track dependencies and changes to source files.
 
 ## Lean
 
@@ -28,4 +28,4 @@ The finite-symmetry development also formalizes specific density, quotient-class
 
 ## AI assistance
 
-I use AI for derivations, literature comparison, code and editing. The [workflow case study](research-workflow.md) includes the prototype, an example graph and a reusable research brief.
+I use AI for derivations, literature comparison, code and editing. The [research notes](research-workflow.md) describe how questions, sources and results are recorded.

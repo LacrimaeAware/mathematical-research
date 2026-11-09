@@ -2,6 +2,8 @@
 
 The website uses static HTML and CSS. Markdown summaries are rendered with Marked and KaTeX; styles and fonts are bundled locally.
 
+Public pages showcase mathematical investigations and experiments. Present workflow material as notes on those investigations. Keep setup instructions, reusable templates and proposed software integrations in the technical references.
+
 ## Preview
 
 With Node.js 20 or later, npm and Python installed:
