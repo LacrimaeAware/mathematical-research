@@ -1,37 +1,47 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Engineering an AI-assisted research workflow · LacrimaeAware</title><link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="../vendor/katex.min.css"><script src="../proof-tags.js" defer></script></head><body><main class="note"><a class="back" href="../index.html">← Independent Mathematical Research</a><h1>Engineering an AI-assisted research workflow</h1>
-<p>I designed a workflow for continuing mathematical investigations across sessions. Its Python prototype checks dependencies and source versions, compiles handoffs, and replays saved Lean proof candidates.</p>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Research workflow and current directions · LacrimaeAware</title><link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="../vendor/katex.min.css"><script src="../proof-tags.js" defer></script></head><body><main class="note"><a class="back" href="../index.html">← Independent Mathematical Research</a><h1>Research workflow and current directions</h1>
+<p>The workflow starts with a mathematical question, compares published results and uses a bounded proof attempt or experiment to decide what to try next.</p>
 <p>AI assists with derivations, literature searches, implementation and editing.</p>
-<h2>Working components</h2>
+<h2>Current work</h2>
+<p>Recent work studies robust factor recovery: estimating shared directions and unequal background noise from observations with outliers and highly variable magnitudes. The next planned step is to compare the written recovery guarantee with existing methods and define a reproducible validation task.</p>
+<p>Separate investigations study convolution stability, asking how close a distribution is to an exactly stable one when convolving it with itself changes it only slightly, and robust learning from corrupted labels.</p>
+<h2>Research cycle</h2>
+<ol>
+<li>Read the closest published results and check their assumptions.</li>
+<li>Write competing explanations and a test that could distinguish them.</li>
+<li>Compare what the proof or experiment establishes, including failed approaches.</li>
+<li>Update the source notes, reusable arguments and next decision.</li>
+</ol>
+<p>The wider project maintains a cumulative bibliography with reading notes, a reusable-method archive and comparison workbooks generated from its research records.</p>
+<h2>Public workflow tools</h2>
 <div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table>
 <thead>
 <tr>
 <th>Component</th>
-<th>Engineering detail</th>
+<th>Function</th>
 <th>Inspect</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>Dependency validation</td>
-<td>AND/OR directed acyclic graphs record shared lemmas and alternative routes. A topological sort detects cycles; reference checks catch missing claims and duplicate edges.</td>
+<td>Dependency checks</td>
+<td>Detect cycles, missing claims and duplicate dependencies.</td>
 <td><a href="../workflow/validate_graph.py">Python validator</a> · <a href="../workflow/dependency-example.json">example map</a></td>
 </tr>
 <tr>
-<td>Evidence and handoffs</td>
-<td>A structured JSON state links claims to source files and research attempts. SHA-256 text fingerprints detect changed evidence before the tool compiles a dependency-aware Markdown handoff.</td>
+<td>Source versions and handoffs</td>
+<td>Check saved source hashes before generating a research handoff.</td>
 <td><a href="../workflow/research_state.py">State checker and compiler</a> · <a href="../workflow/example-handoff.md">generated handoff</a></td>
 </tr>
 <tr>
-<td>Lean candidate replay</td>
-<td>The runner generates Lean files from saved proof candidates while keeping the statement fixed. It records compiler diagnostics, timeouts, source hashes and the theorem’s axiom report.</td>
+<td>Lean replay</td>
+<td>Compile saved candidates against a fixed statement and record diagnostics, timeouts and axioms.</td>
 <td><a href="../workflow/lean_replay.py">Runner</a> · <a href="../workflow/lean-example-result.json">recorded output</a></td>
 </tr>
 <tr>
 <td>Portfolio generation</td>
-<td>A maintained research register generates the public metadata and proof-scope descriptions. Fingerprint checks require changed research evidence to be reconciled before export.</td>
+<td>Generate topic metadata and proof labels from the research register.</td>
 <td><a href="https://github.com/LacrimaeAware/mathematical-research/blob/main/DEVELOPMENT.md">Build and data flow</a></td>
 </tr>
 </tbody></table></div>
-<p>One retained dependency map has <strong>195 nodes and 45 edges</strong>. Research briefs specify the hypotheses, proposed approach, decisive check and return format; handoffs preserve useful deductions when a route fails.</p>
 <h2>Try the prototype</h2>
 <p>From a checkout of the <a href="https://github.com/LacrimaeAware/mathematical-research">repository</a>, with Python 3.10+:</p>
 <pre><code class="language-sh">python site/workflow/research_state.py check
@@ -39,8 +49,7 @@ python site/workflow/research_state.py handoff --output handoff.md
 </code></pre>
 <p>The included example follows the two <a href="prime-patterns.html">prime-pattern gap constructions</a>. Edit its source excerpt and rerun the check: the changed fingerprint blocks a new handoff until the evidence is reviewed.</p>
 <p>With Lean 4 installed, <code>python site/workflow/lean_replay.py</code> runs a small adapter test: an incorrect proof and a placeholder are rejected; a valid proof of the same statement is accepted. The <a href="https://github.com/LacrimaeAware/mathematical-research/blob/main/site/workflow/README.md">tool README</a> includes the regression tests and input formats.</p>
-<h2>Next engineering steps</h2>
-<p>The next integration is live goal and diagnostic access through <a href="https://github.com/oOo0oOo/lean-lsp-mcp">Lean LSP MCP</a>, alongside a trial of <a href="https://github.com/PatrickMassot/leanblueprint">Lean Blueprint</a> for linking written lemmas to formal declarations.</p>
-<p>After that, I want to compare one-shot generation, compiler-guided repair and retrieval-assisted repair on fixed, held-out theorem groups. <a href="https://github.com/lean-dojo/LeanCopilot">Lean Copilot</a>, <a href="https://github.com/stanford-centaur/PyPantograph">Pantograph</a> and <a href="https://github.com/lean-dojo/LeanDojo-v2">LeanDojo-v2</a> provide concrete references for proof search, prover interaction and eventual training experiments. The <a href="../workflow/engineering-roadmap.md">engineering roadmap</a> specifies the interfaces and checks for each stage.</p>
+<h2>Proposed prover integrations</h2>
+<p>Further Lean integrations and proof-generation benchmarks remain <a href="../workflow/engineering-roadmap.md">proposals</a>. The public prototype currently uses batch compilation.</p>
 <p><a href="../workflow/research-brief.md">Research-brief template</a> · <a href="methods.html">Proof labels and verification</a></p>
 <p class="note-footer">LacrimaeAware · AI-assisted research. <a href="research-workflow.html">Research process and tools</a> · <a href="methods.html">Proof labels and verification</a></p></main></body></html>

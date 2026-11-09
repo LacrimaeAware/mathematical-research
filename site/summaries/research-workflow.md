@@ -1,19 +1,32 @@
-# Engineering an AI-assisted research workflow
+# Research workflow and current directions
 
-I designed a workflow for continuing mathematical investigations across sessions. Its Python prototype checks dependencies and source versions, compiles handoffs, and replays saved Lean proof candidates.
+The workflow starts with a mathematical question, compares published results and uses a bounded proof attempt or experiment to decide what to try next.
 
 AI assists with derivations, literature searches, implementation and editing.
 
-## Working components
+## Current work
 
-| Component | Engineering detail | Inspect |
+Recent work studies robust factor recovery: estimating shared directions and unequal background noise from observations with outliers and highly variable magnitudes. The next planned step is to compare the written recovery guarantee with existing methods and define a reproducible validation task.
+
+Separate investigations study convolution stability, asking how close a distribution is to an exactly stable one when convolving it with itself changes it only slightly, and robust learning from corrupted labels.
+
+## Research cycle
+
+1. Read the closest published results and check their assumptions.
+2. Write competing explanations and a test that could distinguish them.
+3. Compare what the proof or experiment establishes, including failed approaches.
+4. Update the source notes, reusable arguments and next decision.
+
+The wider project maintains a cumulative bibliography with reading notes, a reusable-method archive and comparison workbooks generated from its research records.
+
+## Public workflow tools
+
+| Component | Function | Inspect |
 |---|---|---|
-| Dependency validation | AND/OR directed acyclic graphs record shared lemmas and alternative routes. A topological sort detects cycles; reference checks catch missing claims and duplicate edges. | [Python validator](../workflow/validate_graph.py) · [example map](../workflow/dependency-example.json) |
-| Evidence and handoffs | A structured JSON state links claims to source files and research attempts. SHA-256 text fingerprints detect changed evidence before the tool compiles a dependency-aware Markdown handoff. | [State checker and compiler](../workflow/research_state.py) · [generated handoff](../workflow/example-handoff.md) |
-| Lean candidate replay | The runner generates Lean files from saved proof candidates while keeping the statement fixed. It records compiler diagnostics, timeouts, source hashes and the theorem’s axiom report. | [Runner](../workflow/lean_replay.py) · [recorded output](../workflow/lean-example-result.json) |
-| Portfolio generation | A maintained research register generates the public metadata and proof-scope descriptions. Fingerprint checks require changed research evidence to be reconciled before export. | [Build and data flow](https://github.com/LacrimaeAware/mathematical-research/blob/main/DEVELOPMENT.md) |
-
-One retained dependency map has **195 nodes and 45 edges**. Research briefs specify the hypotheses, proposed approach, decisive check and return format; handoffs preserve useful deductions when a route fails.
+| Dependency checks | Detect cycles, missing claims and duplicate dependencies. | [Python validator](../workflow/validate_graph.py) · [example map](../workflow/dependency-example.json) |
+| Source versions and handoffs | Check saved source hashes before generating a research handoff. | [State checker and compiler](../workflow/research_state.py) · [generated handoff](../workflow/example-handoff.md) |
+| Lean replay | Compile saved candidates against a fixed statement and record diagnostics, timeouts and axioms. | [Runner](../workflow/lean_replay.py) · [recorded output](../workflow/lean-example-result.json) |
+| Portfolio generation | Generate topic metadata and proof labels from the research register. | [Build and data flow](https://github.com/LacrimaeAware/mathematical-research/blob/main/DEVELOPMENT.md) |
 
 ## Try the prototype
 
@@ -28,10 +41,8 @@ The included example follows the two [prime-pattern gap constructions](prime-pat
 
 With Lean 4 installed, `python site/workflow/lean_replay.py` runs a small adapter test: an incorrect proof and a placeholder are rejected; a valid proof of the same statement is accepted. The [tool README](https://github.com/LacrimaeAware/mathematical-research/blob/main/site/workflow/README.md) includes the regression tests and input formats.
 
-## Next engineering steps
+## Proposed prover integrations
 
-The next integration is live goal and diagnostic access through [Lean LSP MCP](https://github.com/oOo0oOo/lean-lsp-mcp), alongside a trial of [Lean Blueprint](https://github.com/PatrickMassot/leanblueprint) for linking written lemmas to formal declarations.
-
-After that, I want to compare one-shot generation, compiler-guided repair and retrieval-assisted repair on fixed, held-out theorem groups. [Lean Copilot](https://github.com/lean-dojo/LeanCopilot), [Pantograph](https://github.com/stanford-centaur/PyPantograph) and [LeanDojo-v2](https://github.com/lean-dojo/LeanDojo-v2) provide concrete references for proof search, prover interaction and eventual training experiments. The [engineering roadmap](../workflow/engineering-roadmap.md) specifies the interfaces and checks for each stage.
+Further Lean integrations and proof-generation benchmarks remain [proposals](../workflow/engineering-roadmap.md). The public prototype currently uses batch compilation.
 
 [Research-brief template](../workflow/research-brief.md) · [Proof labels and verification](methods.md)

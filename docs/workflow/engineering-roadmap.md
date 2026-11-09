@@ -1,7 +1,8 @@
-# Engineering roadmap
+# Proposed prover integrations
 
-Reviewed September 17, 2026. This plan extends the working Python tools in this
-directory. The linked systems are integration candidates and design references.
+Recorded September 17, 2026. These are optional extensions to the working Python
+tools in this directory. The current mathematical direction is described in the
+[research workflow](https://lacrimaeaware.github.io/mathematical-research/notes/research-workflow.html).
 
 ## 1. Connect generated Lean attempts to live prover feedback
 
@@ -52,5 +53,5 @@ test retrieval and, if there is enough suitable data and compute, a small
 supervised fine-tuning experiment. Compare it against the frozen baseline.
 
 Record the data split, configuration, compute cost and held-out measurements
-for each experiment. The near-term work is prover integration and evaluation;
-training experiments follow once the evaluation and data collection are stable.
+for each experiment. Training experiments depend on completing the proposed
+integration, evaluation and data-collection stages.
