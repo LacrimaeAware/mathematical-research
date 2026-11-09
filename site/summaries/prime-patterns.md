@@ -14,9 +14,9 @@ The following are lower bounds for this same quantity, with positive constants d
 |---|---|
 | Elementary covering | $x(\log x)^{k-1}$ |
 | Original matching-based argument | $x(\log x)^k/\log\log x$ |
-| Rankin-style adaptation derived in this project | $x(\log x)^{2k-1}(\log\log\log x)^k/(\log\log x)^{2k}$ |
+| Rankin-style adaptation | $x(\log x)^{2k-1}(\log\log\log x)^k/(\log\log x)^{2k}$ |
 
-The original argument improves the elementary construction by a growing logarithmic factor. The Rankin-style adaptation developed during this project gives a still larger lower bound for every fixed $k\ge2$, using the structure of the fixed shifts.
+The original argument improves the elementary construction by a growing logarithmic factor. The Rankin-style adaptation gives a still larger lower bound for every fixed $k\ge2$, using the structure of the fixed shifts.
 
 For $H=\{0,2\}$, the Rankin-style bound is
 

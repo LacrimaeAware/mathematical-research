@@ -18,7 +18,7 @@ The density counts the allowed differences in $D$, including zero.
 
 ## An exact extremal consequence
 
-An extremal consequence makes the structure concrete. If $7$ divides $N=|G|$ and $N$ is coprime to $6$, a $K_4$-free Cayley graph on $G$ has maximum degree exactly $4N/7$, hence at most $2N^2/7$ edges. Every maximizer is obtained by pulling back the complement of a seven-cycle from a quotient of order seven.
+If $7$ divides $N=|G|$ and $N$ is coprime to $6$, a $K_4$-free Cayley graph on $G$ has maximum degree exactly $4N/7$, hence at most $2N^2/7$ edges. Every maximizer is obtained by pulling back the complement of a seven-cycle from a quotient of order seven.
 
 ## Proof
 

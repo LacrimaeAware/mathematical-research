@@ -8,7 +8,7 @@ Recovery with unknown asymmetric label noise has an established theory, includin
 
 **Measurements through degree three can be identical for different boundaries and different noise rates. Degree four supplies enough information to recover both.** An explicit pair of models establishes the ambiguity; an inversion formula establishes recovery.
 
-A label-weighted moment averages the observed label multiplied by a polynomial of the input coordinates. The degree tells us which polynomial measurements are available. The result identifies a precise change in the information collected that resolves the ambiguity.
+A label-weighted moment averages the observed label multiplied by a polynomial of the input coordinates. The degree tells us which polynomial measurements are available.
 
 | Available measurements | What they determine |
 |---|---|
