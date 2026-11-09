@@ -1,8 +1,8 @@
 # Prime-built arrays with near-maximal rank
 
-Prime numbers obey exact arithmetic rules, yet some patterns among them behave statistically like random choices. Understanding that behaviour helps describe large families of arithmetic objects. [Koymans and Smith](https://arxiv.org/abs/2405.09311) use a trilinear large-sieve estimate for Rédei symbols in their work on sums of rational cubes and Selmer groups.
+Can relationships among primes produce arrays that behave like random data? Pairwise residue conditions determine which triples are compatible; each compatible triple carries an additional sign. Collecting these signs produces a three-index array, or **tensor**.
 
-The question here is what those estimates imply for arrays built from relationships among primes. Pairwise residue conditions determine which triples are compatible; each compatible triple carries an additional sign. Collecting these signs produces a three-index array, or **tensor**.
+[Koymans and Smith](https://arxiv.org/abs/2405.09311) use a trilinear large-sieve estimate for Rédei symbols in their work on sums of rational cubes and Selmer groups. The question here is what those estimates imply for these arrays.
 
 ## Result
 

@@ -6,8 +6,6 @@ How few connections can a network have if every four points must contain a conne
 
 The theorem establishes that, under a **4/9 density threshold** and the group assumptions below, the network must contain a pattern of **seven repeating classes**. Each class is connected internally and to its two neighbors around a cycle.
 
-This identifies an organization forced by the connection rule and sparsity. It helps explain why the available subgroup structure matters when moving from prime-sized systems to more general finite groups.
-
 ## Group assumptions and conclusion
 
 Let $G$ be a finite abelian group whose size is divisible by neither 2 nor 3. Let $D=-D$ contain zero, and connect distinct $x,y\in G$ when $x-y\in D$. Suppose every four vertices contain a connected pair and $|D|<4|G|/9$.

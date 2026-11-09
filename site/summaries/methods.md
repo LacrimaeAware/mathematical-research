@@ -26,6 +26,6 @@ The finite-symmetry development also formalizes specific density, quotient-class
 
 [Prime-pattern result](prime-patterns.md) · [Finite-symmetry result](finite-symmetry.md) · [Factorization result](factor-packing.md)
 
-## AI assistance and workflow design
+## AI assistance
 
-I use AI for derivations, literature comparison, code and editing. My role includes choosing the questions, designing the research prompts and dependency maps, directing tests and revisions, and organizing the handoffs between sessions. The [workflow case study](research-workflow.md) shows the prototype, an example graph and a reusable research brief.
+I use AI for derivations, literature comparison, code and editing. The [workflow case study](research-workflow.md) includes the prototype, an example graph and a reusable research brief.

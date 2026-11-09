@@ -2,7 +2,7 @@
 
 A classifier can predict the right labels without making its underlying rule easy to inspect. This project asks when accurate predictions also determine the geometry: a collection of straight boundaries, with the label changing whenever a point crosses one of them.
 
-For Gaussian observations and a fixed number of separated boundaries, the main theorem turns small prediction error into **linearly small coefficient error**, independently of the surrounding dimension. The current manuscript develops this into convex reconstruction from label measurements and recovery guarantees for corrupted samples.
+For Gaussian observations and a fixed number of separated boundaries, the main theorem turns small prediction error into **linearly small coefficient error**, independently of the surrounding dimension. The results also give convex reconstruction from label measurements and recovery guarantees for corrupted samples.
 
 ## The coefficient guarantee
 
@@ -24,7 +24,7 @@ $$O_{r,T,\eta}\!\left(\xi\log(1/\xi)^{r/2}+\tau\right)$$
 
 under a small adversarial replacement fraction $\xi$. The robust estimation input comes from [Diakonikolas, Kane and Stewart, *Learning Geometric Concepts with Nasty Noise*](https://arxiv.org/abs/1707.01242); the coefficient and boundary recovery argument is the part developed here.
 
-## What the recent sample analysis adds
+## Direct fitting and moment measurements
 
 The manuscript also compares recovering from moments with fitting the observations directly. If $m$ of $N$ observations are replaced, an empirical sign-error minimizer satisfies a coefficient bound of order
 

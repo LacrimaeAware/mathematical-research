@@ -1,8 +1,8 @@
 # Engineering an AI-assisted research workflow
 
-Long investigations leave behind partial proofs, competing drafts and assumptions that need checking. I designed the task structure and review process for this work, and I’m developing Python tools to make those investigations easier to inspect and continue across models and sessions.
+I designed a workflow for continuing mathematical investigations across sessions. Its Python prototype checks dependencies and source versions, compiles handoffs, and replays saved Lean proof candidates.
 
-The prototype connects **research-state validation, source fingerprints, generated handoffs and Lean compiler feedback**. AI assists with derivations, literature searches, implementation and editing; I set the direction and requirements and iterate on the process through the research itself.
+AI assists with derivations, literature searches, implementation and editing.
 
 ## Working components
 
@@ -13,7 +13,7 @@ The prototype connects **research-state validation, source fingerprints, generat
 | Lean candidate replay | The runner generates Lean files from saved proof candidates while keeping the statement fixed. It records compiler diagnostics, timeouts, source hashes and the theorem’s axiom report. | [Runner](../workflow/lean_replay.py) · [recorded output](../workflow/lean-example-result.json) |
 | Portfolio generation | A maintained research register generates the public metadata and proof-scope descriptions. Fingerprint checks require changed research evidence to be reconciled before export. | [Build and data flow](https://github.com/LacrimaeAware/mathematical-research/blob/main/DEVELOPMENT.md) |
 
-These tools grow out of a workflow used across the investigations. One retained dependency map has **195 nodes and 45 edges**. Research briefs specify the hypotheses, proposed approach, decisive check and return format; handoffs preserve useful deductions when a route fails.
+One retained dependency map has **195 nodes and 45 edges**. Research briefs specify the hypotheses, proposed approach, decisive check and return format; handoffs preserve useful deductions when a route fails.
 
 ## Try the prototype
 
@@ -26,7 +26,7 @@ python site/workflow/research_state.py handoff --output handoff.md
 
 The included example follows the two [prime-pattern gap constructions](prime-patterns.md). Edit its source excerpt and rerun the check: the changed fingerprint blocks a new handoff until the evidence is reviewed.
 
-With Lean 4 installed, `python site/workflow/lean_replay.py` runs a small adapter test: an incorrect proof and a placeholder are rejected; a valid proof of the same statement is accepted. The [tool README](https://github.com/LacrimaeAware/mathematical-research/blob/main/site/workflow/README.md) includes the regression tests and input formats. Structural checks, compiler acceptance and mathematical interpretation each have a separate job.
+With Lean 4 installed, `python site/workflow/lean_replay.py` runs a small adapter test: an incorrect proof and a placeholder are rejected; a valid proof of the same statement is accepted. The [tool README](https://github.com/LacrimaeAware/mathematical-research/blob/main/site/workflow/README.md) includes the regression tests and input formats.
 
 ## Next engineering steps
 
