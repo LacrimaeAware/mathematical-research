@@ -32,7 +32,7 @@ The conversion from relation bounds to eventual polynomial behavior uses establi
 The upper bound addresses the arithmetic-specific onset question in the multiplication-table literature. [Sabuncu and Táfula's work on large-dimensional multiplication tables](https://arxiv.org/abs/2608.16163) provides a recent comparison: this result improves the stabilization bound, while their main asymptotic counting result is a different conclusion.
 
 <!-- proof-scope:multiplication-tables -->
-Complete written stabilization argument and exact finite checks. The sharp lower bound concerns selected alphabets; the upper bound also applies to the complete multiplication table. The proof uses established circuit-to-stabilization and Hilbert-series results.
+The sharp lower bound concerns selected alphabets; the upper bound also applies to the complete multiplication table. The proof uses established circuit-to-stabilization and Hilbert-series results.
 <!-- /proof-scope -->
 
 [Factorization obstructions](factor-packing.md) studies another feature of the same multiplication structures: products missing from a bounded factorization even when their powers fit.

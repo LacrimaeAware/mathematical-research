@@ -22,4 +22,4 @@ Different three-element subsets of $A$ must have different products; the two sub
 
 The proof represents integers by edges joining two factors. Equal products then correspond to patterns in the graph, so restricting those patterns puts a limit on how many integers the set can contain. Keeping track of the sizes and ordering of prime factors sharpens the count.
 
-The argument combines this graph bound with estimates on the available factorizations. Exact Python checks support the finite combinatorial steps.
+The argument combines this graph bound with estimates on the available factorizations.

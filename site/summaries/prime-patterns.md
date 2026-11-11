@@ -2,7 +2,7 @@
 
 How long can an interval contain no starting position for a fixed pattern of numbers that passes all small-prime divisibility tests? This project studies that question through two covering constructions and a Lean formalization of the original argument.
 
-For a pair such as $n,n+2$, these are gaps between **sieve candidates**. [Ziller and Morack's paired Jacobsthal function](https://arxiv.org/abs/1706.00317) gives one connection to prime-pair questions. The gap statements describe the divisibility tests, rather than asserting infinitely many prime pairs.
+For a pair such as $n,n+2$, these are gaps between **sieve candidates**. [Ziller and Morack's paired Jacobsthal function](https://arxiv.org/abs/1706.00317) gives one connection to prime-pair questions.
 
 ## The object being measured
 
@@ -24,7 +24,7 @@ $$G_H(x)\gg_H x(\log x)^3\frac{(\log\log\log x)^2}{(\log\log x)^4}.$$
 
 ## How the constructions fit the literature
 
-The original proof combines sieve estimates with a hypergraph matching argument to cover a long interval of starting positions. Its formal development records the deductions and the interfaces to its two external theorem inputs.
+The original proof combines sieve estimates with a hypergraph matching argument to cover a long interval of starting positions.
 
 The second construction adapts the classical Rankin strategy to fixed patterns, using a Selberg sieve and estimates for smooth-number exceptions. It builds on methods in [Ford, Green, Konyagin and Tao, *Large gaps between consecutive prime numbers*](https://arxiv.org/abs/1408.4505).
 
@@ -35,7 +35,5 @@ The second construction adapts the classical Rankin strategy to fixed patterns, 
 <!-- proof-scope:prime-patterns -->
 The original matching-based gap bound is substantially formalized in Lean, conditional on quantitative Selberg and labelled Bennett–Frieze inputs. A separate written Rankin-style adaptation gives the larger bound displayed in the comparison.
 <!-- /proof-scope -->
-
-The Lean endpoint is `main_gap_v6_cleanup`. Its recorded kernel audit lists the standard logical axioms and no placeholder-proof axiom. The quantitative Selberg and labelled Bennett–Frieze results enter as explicit hypotheses. This formal audit applies to the original bound.
 
 [Computation and formal proof](methods.md) explains the verification labels used throughout the portfolio.

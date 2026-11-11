@@ -33,5 +33,5 @@ A separate discrete-time model uses independent geometric stages and multiplies 
 ## Proof scope
 
 <!-- proof-scope:hidden-stages -->
-Written threshold for populations with at most m exponential stages: the joint distribution of m matched totals identifies the population distribution of stage count and unordered rates, while m−1 can fail. Uniform estimator guarantees assume a positive rate floor. Exact identity checks supplement the proof.
+Written threshold for populations with at most m exponential stages: the joint distribution of m matched totals identifies the population distribution of stage count and unordered rates, while m−1 can fail. Uniform estimator guarantees assume a positive rate floor.
 <!-- /proof-scope -->

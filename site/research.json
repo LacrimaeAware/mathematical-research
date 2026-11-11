@@ -42,7 +42,7 @@
       "proof": [
         "written"
       ],
-      "scope": "Complete written stabilization argument and exact finite checks. The sharp lower bound concerns selected alphabets; the upper bound also applies to the complete multiplication table. The proof uses established circuit-to-stabilization and Hilbert-series results.",
+      "scope": "The sharp lower bound concerns selected alphabets; the upper bound also applies to the complete multiplication table. The proof uses established circuit-to-stabilization and Hilbert-series results.",
       "brief": "A sharp worst-case stabilization bound over bounded integer sets, including an improved upper bound for the complete multiplication table."
     },
     "distinct-products": {
@@ -86,7 +86,7 @@
       "proof": [
         "written"
       ],
-      "scope": "Written threshold for populations with at most m exponential stages: the joint distribution of m matched totals identifies the population distribution of stage count and unordered rates, while m−1 can fail. Uniform estimator guarantees assume a positive rate floor. Exact identity checks supplement the proof.",
+      "scope": "Written threshold for populations with at most m exponential stages: the joint distribution of m matched totals identifies the population distribution of stage count and unordered rates, while m−1 can fail. Uniform estimator guarantees assume a positive rate floor.",
       "brief": "An exact matched-repeat threshold for hidden exponential stages, with direct recovery of intervention responses."
     },
     "recurring-prime-gaps": {
@@ -108,7 +108,7 @@
       "proof": [
         "written"
       ],
-      "scope": "Written finite tensor results and arithmetic transfer using external Koymans–Smith estimates. The later elliptic-curve deduction has written source reconstruction and exact finite checks, conditional on the named Cassels-pairing and analytic inputs.",
+      "scope": "Written finite tensor results and arithmetic transfer using external Koymans–Smith estimates. The later elliptic-curve deduction is conditional on the named Cassels-pairing and analytic inputs.",
       "brief": "Distribution and rank guarantees for prime-symbol arrays, with a further application to quadratic twists of an elliptic curve."
     },
     "matching-stability": {

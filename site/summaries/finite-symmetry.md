@@ -24,7 +24,7 @@ If $7$ divides $N=|G|$ and $N$ is coprime to $6$, a $K_4$-free Cayley graph on $
 
 The proof translates the network condition into restrictions on differences between group elements. Structure theorems from additive combinatorics narrow the possible arrangements to repeating classes. The remaining case analysis identifies which arrangements are compatible with the density bound, leading to the seven-class pattern.
 
-A **private part** consists of points in one of three shifted copies of $D$ and neither of the other two. Lean checks this construction, the aperiodic quotient construction, local fibre inequalities and further finite deductions. Python calculations provide exact small examples against which to check the structural picture.
+A **private part** consists of points in one of three shifted copies of $D$ and neither of the other two. Lean checks this construction, the aperiodic quotient construction, local fibre inequalities and further finite deductions. Python calculations explore small examples of these networks.
 
 <!-- proof-scope:finite-symmetry -->
 Written proof of the 4/9 structure theorem and its exact extremal consequences in the specified finite abelian groups. Specific finite density, quotient and fibre deductions are also checked in Lean.

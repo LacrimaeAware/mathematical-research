@@ -62,7 +62,7 @@ await cp(path.join(root,'site/style.css'),path.join(out,'style.css'));
 await cp(path.join(root,'site/filters.js'),path.join(out,'filters.js'));
 await cp(path.join(root,'site/proof-tags.js'),path.join(out,'proof-tags.js'));
 await mkdir(path.join(out,'workflow'),{recursive:true});
-for (const file of ['README.md','research-brief.md','dependency-example.json','validate_graph.py','test_validate_graph.py','research_state.py','example-state.json','gap-comparison.md','example-handoff.md','lean_replay.py','lean-example.json','lean-example-result.json','test_lean_replay.py','engineering-roadmap.md']) {
+for (const file of ['README.md']) {
   await cp(path.join(root,'site/workflow',file),path.join(out,'workflow',file));
 }
 await mkdir(path.join(out,'vendor'),{recursive:true});

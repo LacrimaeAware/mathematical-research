@@ -20,7 +20,7 @@ Edit the homepage in `site/index.html`, its styles in `site/style.css`, and the 
 
 `site/research.json` supplies the topic order, subject filters and proof descriptions. A standalone checkout builds this committed snapshot. Maintainers can set `RESEARCH_REGISTRY_TOOL` to a local exporter script; the build then refreshes the snapshot before rendering and stops if export fails.
 
-The public page has one subject filter. Each card carries its own proof labels and an explanation available by hover, focus or tap. **Lean-verified** means substantial formalization of the selected result with its theorem interfaces explained. **Written proof** refers to a written argument for the particular result summarized. Related open questions belong inside the summaries.
+The public page has one subject filter. Each card carries proof labels explained on hover, focus or tap.
 
 Each metadata entry must match exactly one `data-research` card and summary page. The build generates proof badges and `RESEARCH.md` from the same snapshot. Topic scope paragraphs marked `proof-scope` are synchronized too. `README.md` is the repository front page; `media/portfolio-preview.jpg` is a screenshot of the site.
 
@@ -35,10 +35,10 @@ npm ci
 npm run pages
 ```
 
-Commit the changed source and `docs/` together. The Pages preparation command replaces the generated directory, so retired pages and downloads are removed. It refuses to replace a directory without the generated-output marker or to follow a linked output directory. `dist/` and `node_modules/` stay untracked. Run `npm run test:pages` to check these protections.
+Commit the changed source and `docs/` together. `dist/` and `node_modules/` stay untracked. Run `npm run test:pages` to test Pages preparation.
 
 KaTeX's license is distributed with its bundled assets.
 
-## Workflow example
+## Python component tests
 
-Run `python site/workflow/research_state.py check` and `python -m unittest discover -s site/workflow -p "test_*.py"` to check the public example and the validator. The example checks state records and graph structure.
+Run `python -m unittest discover -s site/workflow -p "test_*.py"`.

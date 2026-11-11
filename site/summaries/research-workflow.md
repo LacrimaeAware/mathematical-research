@@ -2,7 +2,7 @@
 
 ## Factor recovery with outliers
 
-Can shared factors and unequal background noise be separated when observations contain outliers and widely varying magnitudes? Current work asks which recovery guarantees can lead to a feasible method with reproducible comparisons.
+Can shared factors and unequal background noise be separated when observations contain outliers and widely varying magnitudes?
 
 ## Convolution stability
 
