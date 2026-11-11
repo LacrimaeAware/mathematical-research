@@ -18,7 +18,7 @@ Choose four distinct residue classes $R$ modulo $M$. Assume they leave a class u
 
 $$ (\mathrm{POL}\bmod M)\cap\bigl((R-R)\setminus\{0\}\bigr)\ne\varnothing.$$
 
-The gcd restriction is a consequence of this more general selection law. The written argument and its fixed-tuple application of the external sieve have internal proof review.
+The gcd restriction is a consequence of this more general selection law. The written argument applies the external sieve to a fixed tuple.
 
 ## A related modular consequence
 

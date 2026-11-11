@@ -18,8 +18,8 @@ The finite-symmetry development also formalizes specific density, quotient-class
 
 **Lean-verified** means substantial formalization of the result being presented. Each badge explains the scope and any external theorem interfaces.
 
-**Written proof** means a written argument for the specific result described, with self-review or internal proof review.
+**Written proof** means a written argument for the specific result described.
 
 [Prime-pattern result](prime-patterns.md) · [Finite-symmetry result](finite-symmetry.md) · [Factorization result](factor-packing.md)
 
-<p id="ai-assistance">AI assists with derivations, literature comparison, code and editing.</p>
+<p id="ai-assistance">AI generated the derivations, literature comparisons, code and drafts.</p>

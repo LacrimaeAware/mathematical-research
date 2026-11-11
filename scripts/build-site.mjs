@@ -15,7 +15,7 @@ if (registryTool) {
   if (!existsSync(registryTool)) throw new Error('Configured research register exporter was not found');
   execFileSync('python', [registryTool, '--export-public', path.join(root, 'site/research.json')], {stdio:'inherit'});
 } else {
-  console.log('Building the recorded public snapshot; the private source register is not in this checkout.');
+  console.log('Building from site/research.json.');
 }
 const research = JSON.parse(await readFile(path.join(root, 'site/research.json'), 'utf8'));
 const escapeHtml = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
@@ -38,8 +38,7 @@ marked.use({extensions:[
   {name:'displayMath',level:'block',start:src=>src.indexOf('$$'),tokenizer(src){const m=/^\$\$\s*\n?([\s\S]+?)\n?\$\$(?:\n|$)/.exec(src);if(m)return{type:'displayMath',raw:m[0],text:m[1]};},renderer:token=>math(token.text,true)},
   {name:'inlineMath',level:'inline',start:src=>src.indexOf('$'),tokenizer(src){const m=/^\$([^$\n]+)\$/.exec(src);if(m)return{type:'inlineMath',raw:m[0],text:m[1]};},renderer:token=>math(token.text,false)}
 ]});
-// The preview contains summaries only. Clear previous generated files so that
-// retired proof notes and supporting downloads cannot survive a rebuild.
+// Clear generated output before writing the current pages and downloads.
 await rm(out,{recursive:true,force:true});
 await mkdir(path.join(out,'notes'),{recursive:true});
 let index=await readFile(path.join(root,'site/index.html'),'utf8');
@@ -51,8 +50,7 @@ index=index.replace(/<article\b[^>]*data-research="([^"]+)"[^>]*>[\s\S]*?<\/h3>/
   return card.replace('>', ` data-subject="${entry.subjects.join(' ')}">`) + renderTags(entry, slug);
 });
 if(found.size !== Object.keys(research.entries).length) throw new Error('Research metadata and cards do not match');
-// Follow the register's explicit public reading order. Presentation order
-// is independent of the private contribution and proof assessments.
+// Use the register's order for both the homepage and research index.
 const cards = new Map([...index.matchAll(/<article\b[^>]*data-research="([^"]+)"[^>]*>[\s\S]*?<\/article>/g)].map(match => [match[1], match[0]]));
 const orderedCards = Object.keys(research.entries).map((slug, i) => cards.get(slug).replace(/(<div class="card-label"><span>)\d+ \/ /, `$1${String(i + 1).padStart(2,'0')} / `)).join('\n');
 index=index.replace(/(<section class="research-grid"[^>]*>)[\s\S]*?(<\/section>)/, `$1\n${orderedCards}\n$2`);
@@ -88,5 +86,5 @@ const rows=await Promise.all(Object.entries(research.entries).map(async ([slug,e
 }));
 await writeFile(path.join(root,'RESEARCH.md'), `# Research index\n\n[Browse the visual portfolio](https://lacrimaeaware.github.io/mathematical-research/) · [Repository overview](README.md)\n\nEach proof label applies to the result described in its summary.\n\n| Research | Result or question | Proof status |\n|---|---|---|\n${rows.join('\n')}\n`);
 await writeFile(path.join(out,'.nojekyll'),'');
-console.log(`Built the filtered overview and ${Object.keys(research.entries).length + informationPages.length} summaries and case studies. Output includes only public pages and their local assets.`);
+console.log(`Built the overview and ${Object.keys(research.entries).length + informationPages.length} notes in dist/.`);
 

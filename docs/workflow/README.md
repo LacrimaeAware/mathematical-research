@@ -1,6 +1,6 @@
 # Research workflow prototype
 
-Small, runnable components from an AI-assisted mathematics workflow: dependency
+Small, runnable components from a mathematics workflow: dependency
 validation, evidence fingerprints, generated handoffs and Lean candidate replay.
 Python 3.10+; the Lean example also needs Lean 4 on PATH (tested with 4.34.0).
 

@@ -20,7 +20,7 @@ For the bias and contraction conclusions, the number of selected primes can grow
 
 The proof combines finite-field calculations with the external large-sieve estimates. Fixing most prime coordinates leaves a two- or three-variable sum to control; careful counting then preserves the estimate as the array grows.
 
-The written work includes a corrected uniform transfer and a separate internal check of its inequalities and normalization. The large-sieve theorems provide the external arithmetic input.
+The written work includes a corrected uniform transfer and checks of its inequalities and normalization. The large-sieve theorems provide the external arithmetic input.
 
 ## Further arithmetic application
 
@@ -30,4 +30,4 @@ $$\operatorname{Sha}(E_n/\mathbb Q)[2^\infty]\cong(\mathbb Z/2\mathbb Z)^{2k}.$$
 
 Here the group records an arithmetic obstruction to passing from local solutions to rational ones. The consequence connects the sign calculations to a concrete invariant of elliptic curves. Its proof combines a structured matrix calculation with named external Cassels-pairing and analytic inputs; exact finite checks support the matrix calculation.
 
-The accompanying comparison distinguishes these growing-rank families from the fixed-rank limiting distributions in [Smith's quadratic-twist work](https://arxiv.org/abs/2207.05143). The written deduction and source comparison are retained as a further application; priority for this exact family remains an open literature question.
+The accompanying comparison distinguishes these growing-rank families from the fixed-rank limiting distributions in [Smith's quadratic-twist work](https://arxiv.org/abs/2207.05143).

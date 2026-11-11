@@ -26,4 +26,4 @@ The global constant is explicit and can be large. A sharper estimate applies whe
 
 A boundary far from every other boundary creates a region where its sign change is visible. Gaussian probability estimates turn that visible region into a lower bound on prediction disagreement. Repeatedly pairing nearby boundaries gives the global estimate, accounting for how each removal changes the error.
 
-This supports the broader [geometry-recovery study](geometry-recovery.md), especially its treatment of collisions. Both the matching argument and its separated-boundary consequence have written proofs and independent internal review.
+This supports the broader [geometry-recovery study](geometry-recovery.md), especially its treatment of collisions. Both the matching argument and its separated-boundary consequence have written proofs.

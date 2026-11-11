@@ -7,7 +7,7 @@ Each proof label applies to the result described in its summary.
 | Research | Result or question | Proof status |
 |---|---|---|
 | [Recovering hidden boundaries from accurate predictions](site/summaries/geometry-recovery.md) | Dimension-independent coefficient stability, convex reconstruction from label moments, and recovery bounds for corrupted samples. | Written proof |
-| [When repeated multiplication follows a polynomial](site/summaries/multiplication-tables.md) | A sharp worst-alphabet scale for polynomial stabilization, including an improved upper bound for the complete multiplication table. | Written proof |
+| [When repeated multiplication follows a polynomial](site/summaries/multiplication-tables.md) | A sharp worst-case stabilization bound over bounded integer sets, including an improved upper bound for the complete multiplication table. | Written proof |
 | [A bound toward Erdős’s distinct-product problem](site/summaries/distinct-products.md) | An upper bound toward the triple-product case of Erdős problem 425. | Written proof |
 | [A seven-part pattern forced by symmetry](site/summaries/finite-symmetry.md) | Index-seven structure and exact extremal Cayley graphs in specified finite abelian groups. | Written proof |
 | [Factorization obstructions and their algebraic consequences](site/summaries/factor-packing.md) | Persistent factorization obstructions, larger families of missing elements, and a positive-proportion depth deficit. | Written proof |

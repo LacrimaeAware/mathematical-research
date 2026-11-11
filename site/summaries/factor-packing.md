@@ -31,5 +31,5 @@ This conclusion uses the pattern of ways a missing factorization can be repaired
 Prime-exponent vectors also connect the problem to configuration packing. The work gives a correspondence and examples where a fractional plan needs an extra whole layer. Whether one extra layer always suffices is the general round-up question.
 
 <!-- proof-scope:factor-packing -->
-Written arithmetic repair and depth arguments with recorded internal reviews. A separate, self-checked correction of an earlier multiplication-table example gives larger families of missing elements and associated Picard-group consequences.
+Written arithmetic repair and depth arguments. A correction of an earlier multiplication-table example gives larger families of missing elements and associated Picard-group consequences.
 <!-- /proof-scope -->

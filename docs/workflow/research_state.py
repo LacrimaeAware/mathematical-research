@@ -70,7 +70,7 @@ def compile_handoff(state, graph, report):
     for node_id in report['dependency_order']:
         node = nodes[node_id]
         refs = ', '.join(state['node_sources'][node_id])
-        lines.append(f"- **{node_id}** — {node['label']} ({node['status']}; source: {refs}).")
+        lines.append(f"- **{node_id}**: {node['label']} ({node['status']}; source: {refs}).")
     lines += ['', '## Dependency rules', '']
     for edge in graph['edges']:
         if edge['to'] in selected:
@@ -87,11 +87,11 @@ def compile_handoff(state, graph, report):
                   f"Method: {attempt['method']}", '', f"Check: {attempt['check']}", '',
                   f"Recorded outcome: {attempt['outcome']}", '']
     lines += ['## Source manifest', '', 'SHA-256 of UTF-8 text with LF line endings.', '',
-              f"- Graph: `{state['graph']['path']}` — `{state['graph']['sha256']}`"]
+              f"- Graph: `{state['graph']['path']}`: `{state['graph']['sha256']}`"]
     used = {ref for n in selected for ref in state['node_sources'][n]}
     for source in state['sources']:
         if source['id'] in used:
-            lines.append(f"- {source['id']}: `{source['path']}` — `{source['sha256']}`")
+            lines.append(f"- {source['id']}: `{source['path']}`: `{source['sha256']}`")
     return '\n'.join(lines).rstrip() + '\n'
 
 

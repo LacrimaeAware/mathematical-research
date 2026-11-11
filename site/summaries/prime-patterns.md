@@ -26,9 +26,9 @@ $$G_H(x)\gg_H x(\log x)^3\frac{(\log\log\log x)^2}{(\log\log x)^4}.$$
 
 The original proof combines sieve estimates with a hypergraph matching argument to cover a long interval of starting positions. Its formal development records the deductions and the interfaces to its two external theorem inputs.
 
-The second construction adapts the classical Rankin strategy to fixed patterns, using a Selberg sieve and estimates for smooth-number exceptions. It builds on methods in [Ford, Green, Konyagin and Tao, *Large gaps between consecutive prime numbers*](https://arxiv.org/abs/1408.4505). The fixed-pattern bound is derived using those methods.
+The second construction adapts the classical Rankin strategy to fixed patterns, using a Selberg sieve and estimates for smooth-number exceptions. It builds on methods in [Ford, Green, Konyagin and Tao, *Large gaps between consecutive prime numbers*](https://arxiv.org/abs/1408.4505).
 
-[Ford, Konyagin, Maynard, Pomerance and Tao, *Long gaps in sieved sets*](https://arxiv.org/abs/1802.07604), discusses limitations of its method for higher-dimensional sieves. That broader setting does not have all the fixed-shift structure used in this comparison. The two questions therefore need their hypotheses compared explicitly.
+[Ford, Konyagin, Maynard, Pomerance and Tao, *Long gaps in sieved sets*](https://arxiv.org/abs/1802.07604), discusses limitations of its method for higher-dimensional sieves. That broader setting does not have all the fixed-shift structure used in this comparison.
 
 ## Formal proof scope
 

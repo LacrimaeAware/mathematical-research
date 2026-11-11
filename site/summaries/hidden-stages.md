@@ -1,14 +1,14 @@
 # How many repeats reveal hidden stages?
 
-Suppose a task finishes after several hidden waiting stages. Only the total time is visible, and different members of the population have different stage counts and speeds. Can repeated observations reveal the hidden population—and predict what happens when every stage speeds up?
+Suppose a task finishes after several hidden waiting stages. Only the total time is visible, and different members of the population have different stage counts and speeds. Can repeated observations reveal the hidden population and predict what happens when every stage speeds up?
 
 ## An exact observation threshold
 
-For populations with **at most $m$ independent exponential stages**, $m$ matched completion times identify the population's joint distribution of stage count and unordered stage rates. Each matched group shares the same hidden type, with independent waiting times across runs.
+For populations with **at most $m$ independent exponential stages**, the joint distribution of $m$ matched completion times identifies the population distribution of stage count and unordered stage rates. Each matched group shares the same hidden type, with independent waiting times across runs.
 
-The threshold is sharp: with $m-1$ matched totals, two populations can give exactly the same observations but different responses to an additive rate increase. The construction works for any positive deadline and positive boost.
+The threshold is sharp: with $m-1$ matched totals, two populations can have exactly the same observation law but different responses to an additive rate increase. The construction works for any positive deadline and positive boost.
 
-For two stages, this means **two runs—one matched repeat—suffice**. Pooled totals alone can leave the intervention response undetermined even when their distribution is known exactly.
+For two stages, **two runs per matched panel, or one repeat, suffice for identification**. Pooled totals alone can leave the intervention response undetermined even when their distribution is known exactly.
 
 ## Estimating the response directly
 
@@ -33,5 +33,5 @@ A separate discrete-time model uses independent geometric stages and multiplies 
 ## Proof scope
 
 <!-- proof-scope:hidden-stages -->
-Written, self-reviewed threshold for populations with at most m exponential stages: m matched totals identify the hidden stage count and unordered rates, while m−1 can fail. Uniform estimator guarantees assume a positive rate floor. Exact identity checks supplement the proof.
+Written threshold for populations with at most m exponential stages: the joint distribution of m matched totals identifies the population distribution of stage count and unordered rates, while m−1 can fail. Uniform estimator guarantees assume a positive rate floor. Exact identity checks supplement the proof.
 <!-- /proof-scope -->

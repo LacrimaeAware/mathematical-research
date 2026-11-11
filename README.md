@@ -1,6 +1,6 @@
 # Mathematical investigations
 
-Independent undergraduate work in number theory, algebra, geometry and statistical inference, developed with AI assistance.
+Mathematical notes and computational experiments in number theory, algebra, geometry and statistical inference.
 
 **[Explore the portfolio →](https://lacrimaeaware.github.io/mathematical-research/)** · [Research index](RESEARCH.md) · [Current questions](site/summaries/research-workflow.md)
 

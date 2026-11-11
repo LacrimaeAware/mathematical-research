@@ -8,7 +8,7 @@ The calculation determines how close a probability model can remain to independe
 
 For two events that each occur 10% of the time, independence gives a 1% chance of both occurring. Redistributing just **2% of the probability mass** removes that joint event completely while leaving both 10% rates intact.
 
-The calculation gives a concrete precision requirement: an error tolerance larger than the cost of removing the target can conceal its total absence. It helped me decide which statistical estimates would be useful to pursue in the prime-pattern work.
+The calculation sets a precision target for dependence estimates in prime-pattern arguments: an error tolerance larger than the cost of removing the target can conceal its total absence.
 
 ## Unequal event rates
 
