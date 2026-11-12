@@ -24,4 +24,4 @@ Recent work asks how to recover shared factors and unequal background noise from
 
 ---
 
-**LacrimaeAware** · Mathematical research.
+**LacrimaeAware** · Mathematical research · [AI assistance](https://lacrimaeaware.github.io/mathematical-research/notes/methods.html#ai-assistance).

@@ -19,3 +19,7 @@ The finite-symmetry development also formalizes specific density, quotient-class
 **Written proof** means a written argument for the specific result described.
 
 [Prime-pattern result](prime-patterns.md) · [Finite-symmetry result](finite-symmetry.md) · [Factorization result](factor-packing.md)
+
+<h2 id="ai-assistance">AI assistance</h2>
+
+I use AI for derivations, literature comparison, code and editing.
