@@ -23,4 +23,4 @@ Inputs are standard Gaussian. The clean response is $\operatorname{sign}((a\cdot
 
 Second-degree measurements identify the relevant plane but mix together the boundary angle and noise strength. Fourth-degree measurements separate those quantities. A bounded angular implementation uses the same geometric information and is unchanged by positive rescaling of individual inputs.
 
-The work includes an explicit indistinguishable pair, written inversion and perturbation arguments, and synthetic experiments. Narrow angles make recovery less stable. The result provides a concrete noise-calibration case within the broader [geometry-recovery study](geometry-recovery.md).
+Recovery becomes less stable as the angle between the boundaries narrows. [Recovery from corrupted Gaussian observations](geometry-recovery.md) treats a different source of error, where entire inputs and labels can be replaced.

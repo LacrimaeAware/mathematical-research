@@ -5,9 +5,9 @@
     "explored": "Partial results"
   },
   "proofDescriptions": {
-    "lean": "Substantial formalization of the stated result in Lean. The explanation on each result names its scope and any external theorem interfaces.",
+    "lean": "Lean checks a formal statement from its assumptions.",
     "written": "A written argument for the stated result and assumptions.",
-    "explored": "An unresolved question with established intermediate results, constructions or checked examples. The explanation states what is complete and what remains open."
+    "explored": "An open question with partial results or checked examples."
   },
   "subjects": {
     "number-theory": "Number theory",
@@ -18,20 +18,21 @@
     "statistics": "Statistics",
     "optimization": "Optimization"
   },
-  "reviewedOn": "2026-09-16",
-  "presentationUpdatedOn": "2026-09-17",
-  "sourceRevision": "02b13fe4d389d090adb22302b2aac9f3ed01886d15e0775fce64551b1414768e",
+  "reviewedOn": "2026-10-29",
+  "presentationUpdatedOn": "2026-11-18",
+  "sourceRevision": "07de204153aa00c3531c3bd89d599ff1471e90b60a85ac3d4022b5bb5eeb29aa",
   "entries": {
-    "geometry-recovery": {
+    "convolution-stability": {
       "subjects": [
-        "geometry",
-        "probability"
+        "algebra",
+        "probability",
+        "optimization"
       ],
       "proof": [
         "written"
       ],
-      "scope": "Written coefficient stability, convex moment reconstruction and sample-recovery bounds for fixed complexity and separated, bounded boundaries.",
-      "brief": "Dimension-independent coefficient stability, convex reconstruction from label moments, and recovery bounds for corrupted samples."
+      "scope": "Written stability bounds for regular probability measures on locally compact Hausdorff groups and for positive states on finite Kac quantum groups, in the stated small-defect ranges.",
+      "brief": "A sharp leading bound on distance to a subgroup law, and a dimension-independent linear bound for finite quantum groups."
     },
     "multiplication-tables": {
       "subjects": [
@@ -44,6 +45,50 @@
       ],
       "scope": "The sharp lower bound concerns selected alphabets; the upper bound also applies to the complete multiplication table. The proof uses established circuit-to-stabilization and Hilbert-series results.",
       "brief": "A sharp worst-case stabilization bound over bounded integer sets, including an improved upper bound for the complete multiplication table."
+    },
+    "geometry-recovery": {
+      "subjects": [
+        "geometry",
+        "probability"
+      ],
+      "proof": [
+        "written"
+      ],
+      "scope": "Written coefficient stability, convex moment reconstruction and sample-recovery bounds for fixed complexity and separated, bounded boundaries.",
+      "brief": "Dimension-independent coefficient stability, convex reconstruction from label moments, and recovery bounds for corrupted samples."
+    },
+    "binomial-residues": {
+      "subjects": [
+        "number-theory",
+        "combinatorics"
+      ],
+      "proof": [
+        "written"
+      ],
+      "scope": "For each fixed prime, a density-one set of columns attains every remainder modulo every power of the prime. A quantitative bound covers several primes simultaneously.",
+      "brief": "Almost every column of Pascal’s triangle attains every remainder modulo every power of a fixed prime, with a simultaneous bound for a growing range of primes."
+    },
+    "hidden-stages": {
+      "subjects": [
+        "probability",
+        "statistics"
+      ],
+      "proof": [
+        "written"
+      ],
+      "scope": "Written threshold for populations with at most m exponential stages: the joint distribution of m matched totals identifies the population distribution of stage count and unordered rates, while m−1 can fail. Uniform estimator guarantees assume a positive rate floor.",
+      "brief": "An exact matched-repeat threshold for hidden exponential stages, with direct recovery of intervention responses."
+    },
+    "factor-packing": {
+      "subjects": [
+        "number-theory",
+        "algebra"
+      ],
+      "proof": [
+        "written"
+      ],
+      "scope": "Written arithmetic repair and depth arguments. A correction of an earlier multiplication-table example gives larger families of missing elements and associated Picard-group consequences.",
+      "brief": "Persistent factorization obstructions, larger families of missing elements, and a positive-proportion depth deficit."
     },
     "distinct-products": {
       "subjects": [
@@ -66,28 +111,6 @@
       ],
       "scope": "Written proof of the 4/9 structure theorem and its exact extremal consequences in the specified finite abelian groups. Specific finite density, quotient and fibre deductions are also checked in Lean.",
       "brief": "Index-seven structure and exact extremal Cayley graphs in specified finite abelian groups."
-    },
-    "factor-packing": {
-      "subjects": [
-        "number-theory",
-        "algebra"
-      ],
-      "proof": [
-        "written"
-      ],
-      "scope": "Written arithmetic repair and depth arguments. A correction of an earlier multiplication-table example gives larger families of missing elements and associated Picard-group consequences.",
-      "brief": "Persistent factorization obstructions, larger families of missing elements, and a positive-proportion depth deficit."
-    },
-    "hidden-stages": {
-      "subjects": [
-        "probability",
-        "statistics"
-      ],
-      "proof": [
-        "written"
-      ],
-      "scope": "Written threshold for populations with at most m exponential stages: the joint distribution of m matched totals identifies the population distribution of stage count and unordered rates, while m−1 can fail. Uniform estimator guarantees assume a positive rate floor.",
-      "brief": "An exact matched-repeat threshold for hidden exponential stages, with direct recovery of intervention responses."
     },
     "recurring-prime-gaps": {
       "subjects": [
@@ -122,17 +145,6 @@
       "scope": "Written global matching theorem. Constants depend on the number of boundaries and the threshold bound, independently of ambient dimension; colliding boundaries are allowed.",
       "brief": "A linear bound matches Gaussian decision boundaries even when coincident boundaries cancel."
     },
-    "noisy-boundary-recovery": {
-      "subjects": [
-        "geometry",
-        "statistics"
-      ],
-      "proof": [
-        "written"
-      ],
-      "scope": "Written degree-three ambiguity and degree-four inversion for two distinct centered boundaries, Gaussian inputs and class-dependent flip rates whose sum is below one. The proof includes perturbation bounds.",
-      "brief": "An exact degree-three ambiguity is resolved by degree-four measurements, recovering two boundaries and both unknown noise rates."
-    },
     "prime-patterns": {
       "subjects": [
         "number-theory",
@@ -142,19 +154,8 @@
         "lean",
         "written"
       ],
-      "scope": "The original matching-based gap bound is substantially formalized in Lean, conditional on quantitative Selberg and labelled Bennett–Frieze inputs. A separate written Rankin-style adaptation gives the larger bound displayed in the comparison.",
-      "brief": "Two fixed-pattern sieve-gap constructions, with the original conditional deduction formalized in Lean."
-    },
-    "limits-of-evidence": {
-      "subjects": [
-        "number-theory",
-        "probability"
-      ],
-      "proof": [
-        "written"
-      ],
-      "scope": "Written finite probability calculation.",
-      "brief": "The exact change needed to erase a joint event while preserving its marginal rates."
+      "scope": "Lean checks the matching-based gap deduction assuming the quantitative Selberg estimate and the labelled Bennett–Frieze matching theorem. The stronger Rankin-style gap bound has a written proof.",
+      "brief": "Two constructions bound the length of gaps among prime-pattern candidates. Lean checks the matching-based deduction under two stated hypotheses."
     }
   }
 }

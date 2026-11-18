@@ -6,15 +6,15 @@ Each proof label applies to the result described in its summary.
 
 | Research | Result or question | Proof status |
 |---|---|---|
-| [Recovering hidden boundaries from accurate predictions](site/summaries/geometry-recovery.md) | Dimension-independent coefficient stability, convex reconstruction from label moments, and recovery bounds for corrupted samples. | Written proof |
+| [When does a probability law barely change under convolution?](site/summaries/convolution-stability.md) | A sharp leading bound on distance to a subgroup law, and a dimension-independent linear bound for finite quantum groups. | Written proof |
 | [When repeated multiplication follows a polynomial](site/summaries/multiplication-tables.md) | A sharp worst-case stabilization bound over bounded integer sets, including an improved upper bound for the complete multiplication table. | Written proof |
+| [Recovering hidden boundaries from accurate predictions](site/summaries/geometry-recovery.md) | Dimension-independent coefficient stability, convex reconstruction from label moments, and recovery bounds for corrupted samples. | Written proof |
+| [Which columns of Pascal’s triangle reach every remainder?](site/summaries/binomial-residues.md) | Almost every column of Pascal’s triangle attains every remainder modulo every power of a fixed prime, with a simultaneous bound for a growing range of primes. | Written proof |
+| [How many repeats reveal hidden stages?](site/summaries/hidden-stages.md) | An exact matched-repeat threshold for hidden exponential stages, with direct recovery of intervention responses. | Written proof |
+| [Factorization obstructions and their algebraic consequences](site/summaries/factor-packing.md) | Persistent factorization obstructions, larger families of missing elements, and a positive-proportion depth deficit. | Written proof |
 | [A bound toward Erdős’s distinct-product problem](site/summaries/distinct-products.md) | An upper bound toward the triple-product case of Erdős problem 425. | Written proof |
 | [A seven-part pattern forced by symmetry](site/summaries/finite-symmetry.md) | Index-seven structure and exact extremal Cayley graphs in specified finite abelian groups. | Written proof |
-| [Factorization obstructions and their algebraic consequences](site/summaries/factor-packing.md) | Persistent factorization obstructions, larger families of missing elements, and a positive-proportion depth deficit. | Written proof |
-| [How many repeats reveal hidden stages?](site/summaries/hidden-stages.md) | An exact matched-repeat threshold for hidden exponential stages, with direct recovery of intervention responses. | Written proof |
 | [A common-divisor restriction on recurring prime gaps](site/summaries/recurring-prime-gaps.md) | A four-point selection law restricts the greatest common divisor of recurring consecutive-prime gaps to 2, 4 or 6. | Written proof |
 | [Prime-built arrays with near-maximal rank](site/summaries/arithmetic-tensors.md) | Distribution and rank guarantees for prime-symbol arrays, with a further application to quadratic twists of an elliptic curve. | Written proof |
 | [Matching decision boundaries even when they cancel](site/summaries/matching-stability.md) | A linear bound matches Gaussian decision boundaries even when coincident boundaries cancel. | Written proof |
-| [Recovering two boundaries and their noise rates](site/summaries/noisy-boundary-recovery.md) | An exact degree-three ambiguity is resolved by degree-four measurements, recovering two boundaries and both unknown noise rates. | Written proof |
-| [Two constructions for gaps in prime-pattern candidates](site/summaries/prime-patterns.md) | Two fixed-pattern sieve-gap constructions, with the original conditional deduction formalized in Lean. | Lean-verified · Written proof |
-| [Measuring how a rare event can disappear](site/summaries/limits-of-evidence.md) | The exact change needed to erase a joint event while preserving its marginal rates. | Written proof |
+| [Two constructions for gaps in prime-pattern candidates](site/summaries/prime-patterns.md) | Two constructions bound the length of gaps among prime-pattern candidates. Lean checks the matching-based deduction under two stated hypotheses. | Lean-verified · Written proof |

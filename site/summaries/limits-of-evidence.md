@@ -1,21 +1,13 @@
 # Measuring how a rare event can disappear
 
-Prime-pattern research often asks whether several rare conditions hold at once. Separate frequency estimates are only part of that question. [Terence Tao’s sieve-theory notes](https://terrytao.wordpress.com/2015/01/21/254a-notes-4-some-sieve-theory/) develop this issue through the problem of counting twin primes.
-
-## Result
-
-The calculation determines how close a probability model can remain to independence after removing a joint event, while preserving both individual event rates.
-
-For two events that each occur 10% of the time, independence gives a 1% chance of both occurring. Redistributing just **2% of the probability mass** removes that joint event completely while leaving both 10% rates intact.
-
-The calculation sets a precision target for dependence estimates in prime-pattern arguments: an error tolerance larger than the cost of removing the target can conceal its total absence.
+If two events each occur 10% of the time, independence gives a 1% chance of both occurring. Keeping both individual rates fixed, it takes a change of exactly **2% in total variation distance** to bring the joint probability to zero.
 
 ## Unequal event rates
 
-For event probabilities $\alpha,\beta$ with $\alpha+\beta\le1$, the law of the two event indicators with zero joint probability has total variation distance $2\alpha\beta$ from independence. Total variation measures the largest change in probability assigned to an event.
+Let the individual probabilities be $\alpha$ and $\beta$, with $\alpha+\beta\le1$. These rates and the requirement that the events never coincide determine the joint distribution of their two indicators. Its total variation distance from independence is $2\alpha\beta$. Total variation is the largest difference in probability that two distributions assign to the same event.
 
-The minimum mutual information compatible with absence is asymptotic to $\alpha\beta$ as both rates tend to zero. Mutual information measures the dependence between the two indicators.
+The mutual information of the two indicators under this distribution is asymptotic to $\alpha\beta$ as both rates tend to zero, using natural logarithms.
 
-## Approach
+## Why joint estimates matter
 
-The argument holds the individual event rates fixed and compares the possible joint distributions with independence. Exact rational calculations make the amount of redistributed probability explicit. Extending the calculation to unequal rates and mutual information connects the examples to a general question: how accurately must an argument control dependence to detect its target event?
+A dependence estimate that allows an error of $2\alpha\beta$ in total variation can be consistent with a joint probability of zero. The distinction between individual and simultaneous conditions also arises in sieve problems involving prime pairs. [Terence Tao’s sieve-theory notes](https://terrytao.wordpress.com/2015/01/21/254a-notes-4-some-sieve-theory/)

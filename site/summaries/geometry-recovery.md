@@ -1,6 +1,6 @@
 # Recovering hidden boundaries from accurate predictions
 
-A classifier can predict the right labels without making its underlying rule easy to inspect. This project asks when accurate predictions also determine the geometry: a collection of straight boundaries, with the label changing whenever a point crosses one of them.
+Consider a classifier whose label changes each time an input crosses one of several straight boundaries. If a polynomial predictor almost always gives the same label, how closely must it reproduce those boundaries?
 
 For Gaussian observations and a fixed number of separated boundaries, sufficiently small prediction error bounds the **error in the polynomial coefficients** by a constant times the prediction error. That constant is independent of the surrounding dimension. The results also give convex reconstruction from label measurements and recovery guarantees for corrupted samples.
 

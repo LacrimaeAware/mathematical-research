@@ -1,6 +1,6 @@
 # Two constructions for gaps in prime-pattern candidates
 
-How long can an interval contain no starting position for a fixed pattern of numbers that passes all small-prime divisibility tests? This project studies that question through two covering constructions and a Lean formalization of the original argument.
+How long can an interval contain no starting position where all numbers in a fixed pattern pass the small-prime divisibility tests? Two covering constructions give lower bounds for that length.
 
 For a pair such as $n,n+2$, these are gaps between **sieve candidates**. [Ziller and Morack's paired Jacobsthal function](https://arxiv.org/abs/1706.00317) gives one connection to prime-pair questions.
 
@@ -33,7 +33,9 @@ The second construction adapts the classical Rankin strategy to fixed patterns, 
 ## Formal proof scope
 
 <!-- proof-scope:prime-patterns -->
-The original matching-based gap bound is substantially formalized in Lean, conditional on quantitative Selberg and labelled Bennett–Frieze inputs. A separate written Rankin-style adaptation gives the larger bound displayed in the comparison.
+Lean checks the matching-based gap deduction assuming the quantitative Selberg estimate and the labelled Bennett–Frieze matching theorem. The stronger Rankin-style gap bound has a written proof.
 <!-- /proof-scope -->
 
-[Computation and formal proof](methods.md) explains the verification labels used throughout the portfolio.
+## A related probability calculation
+
+Knowing how often two sieve conditions hold separately leaves their joint frequency undetermined. A [two-event calculation](limits-of-evidence.md) gives the exact change from independence required to eliminate a joint event while preserving both individual frequencies.

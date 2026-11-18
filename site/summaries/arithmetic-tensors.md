@@ -28,4 +28,4 @@ $$\operatorname{Sha}(E_n/\mathbb Q)[2^\infty]\cong(\mathbb Z/2\mathbb Z)^{2k}.$$
 
 Here the group records an arithmetic obstruction to passing from local solutions to rational ones. The consequence connects the sign calculations to a concrete invariant of elliptic curves. Its proof combines a structured matrix calculation with named external Cassels-pairing and analytic inputs.
 
-The accompanying comparison distinguishes these growing-rank families from the fixed-rank limiting distributions in [Smith's quadratic-twist work](https://arxiv.org/abs/2207.05143).
+[Smith](https://arxiv.org/abs/2207.05143) studies the distribution of Selmer groups in twist families. The proportion above is taken among products satisfying the specified pairwise residue conditions, and the number of prime factors can grow with $X$.

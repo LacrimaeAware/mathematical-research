@@ -2,7 +2,7 @@
 
 An integer can fail to fit into two bounded factors even when its square fits into four and its cube into six. This tests an algebraic closure property called **seminormality**: whether including an element's square and cube forces the element itself to be included.
 
-The project develops explicit obstructions in multiplication-table structures, counts families of missing elements, and connects arithmetic repairs to the depth of the associated rings.
+One construction counts a family of missing products. A separate construction bounds how far a multiplication-table ring’s depth falls below its dimension.
 
 ## A persistent square-and-cube obstruction
 

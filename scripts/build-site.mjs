@@ -69,15 +69,15 @@ await mkdir(path.join(out,'vendor'),{recursive:true});
 await cp(path.join(root,'node_modules/katex/dist/katex.min.css'),path.join(out,'vendor/katex.min.css'));
 await cp(path.join(root,'node_modules/katex/dist/fonts'),path.join(out,'vendor/fonts'),{recursive:true});
 await cp(path.join(root,'node_modules/katex/LICENSE'),path.join(out,'vendor/KATEX-LICENSE.txt'));
-const informationPages = ['methods','research-workflow'];
-for(const slug of [...Object.keys(research.entries),...informationPages]){
+const supportingPages = ['methods','research-workflow','limits-of-evidence','noisy-boundary-recovery'];
+for(const slug of [...Object.keys(research.entries),...supportingPages]){
   let source=(await readFile(path.join(root,'site/summaries',`${slug}.md`),'utf8')).replace(/\r\n?/g,'\n');
   source=source.replace(/<!-- proof-scope:([\w-]+) -->[\s\S]*?<!-- \/proof-scope -->/g, (_, key) => `<!-- proof-scope:${key} -->\n${research.entries[key].scope}\n<!-- /proof-scope -->`);
   await writeFile(path.join(root,'site/summaries',`${slug}.md`),source);
   const title=source.split('\n')[0].replace(/^# /,'').trim();
   let body=marked.parse(source).replace(/<table>/g,'<div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable data table"><table>').replace(/<\/table>/g,'</table></div>');
   if(research.entries[slug]) body=body.replace('</h1>','</h1>'+renderTags(research.entries[slug], slug));
-  body=body.replace(/href="([\w-]+)\.md(?=["#])/g, (match, target) => Object.hasOwn(research.entries,target) || informationPages.includes(target) ? `href="${target}.html` : match);
+  body=body.replace(/href="([\w-]+)\.md(?=["#])/g, (match, target) => Object.hasOwn(research.entries,target) || supportingPages.includes(target) ? `href="${target}.html` : match);
   await writeFile(path.join(out,'notes',`${slug}.html`),`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escapeHtml(title)} · LacrimaeAware</title><link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="../vendor/katex.min.css"><script src="../proof-tags.js" defer></script></head><body><main class="note"><a class="back" href="../index.html">← Mathematical investigations</a>${body}<p class="note-footer">LacrimaeAware · <a href="../index.html">Back to research</a></p></main></body></html>`);
 }
 const rows=await Promise.all(Object.entries(research.entries).map(async ([slug,entry])=>{
@@ -86,5 +86,5 @@ const rows=await Promise.all(Object.entries(research.entries).map(async ([slug,e
 }));
 await writeFile(path.join(root,'RESEARCH.md'), `# Research index\n\n[Browse the visual portfolio](https://lacrimaeaware.github.io/mathematical-research/) · [Repository overview](README.md)\n\nEach proof label applies to the result described in its summary.\n\n| Research | Result or question | Proof status |\n|---|---|---|\n${rows.join('\n')}\n`);
 await writeFile(path.join(out,'.nojekyll'),'');
-console.log(`Built the overview and ${Object.keys(research.entries).length + informationPages.length} notes in dist/.`);
+console.log(`Built the overview and ${Object.keys(research.entries).length + supportingPages.length} notes in dist/.`);
 
