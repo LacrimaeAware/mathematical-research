@@ -18,13 +18,13 @@ The density counts the allowed differences in $D$, including zero.
 
 ## An exact extremal consequence
 
-If $7$ divides $N=|G|$ and $N$ is coprime to $6$, a $K_4$-free Cayley graph on $G$ has maximum degree exactly $4N/7$, hence at most $2N^2/7$ edges. Every maximizer is obtained by pulling back the complement of a seven-cycle from a quotient of order seven.
+If $7$ divides $N=|G|$ and $N$ is coprime to $6$, the largest possible degree of a $K_4$-free Cayley graph on $G$ is $4N/7$. The largest possible edge count is $2N^2/7$. Every maximizer is obtained by pulling back the complement of a seven-cycle from a quotient of order seven.
 
-## Proof
+## Connection to earlier work
 
-The proof translates the network condition into restrictions on differences between group elements. Structure theorems from additive combinatorics narrow the possible arrangements to repeating classes. The remaining case analysis identifies which arrangements are compatible with the density bound, leading to the seven-class pattern.
+The complementary graph has degree $N-|D|$, so the threshold above corresponds to degree greater than $5N/9$. At the same threshold, Illingworth gives a graph homomorphism to the complement of a seven-cycle when every vertex neighborhood is bipartite. The Cayley result starts from a $K_4$-free graph on the specified abelian group and identifies the seven classes as cosets of a subgroup. [Illingworth, Theorem 3.1(b)](https://doi.org/10.1017/S0963548322000050)
 
-A **private part** consists of points in one of three shifted copies of $D$ and neither of the other two. Lean checks this construction, the aperiodic quotient construction, local fibre inequalities and further finite deductions. Python calculations explore small examples of these networks.
+## Proof scope
 
 <!-- proof-scope:finite-symmetry -->
 Written proof of the 4/9 structure theorem and its exact extremal consequences in the specified finite abelian groups. Specific finite density, quotient and fibre deductions are also checked in Lean.

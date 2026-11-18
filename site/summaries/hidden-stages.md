@@ -4,21 +4,17 @@ Suppose a task finishes after several hidden waiting stages. Only the total time
 
 ## An exact observation threshold
 
-For populations with **at most $m$ independent exponential stages**, the joint distribution of $m$ matched completion times identifies the population distribution of stage count and unordered stage rates. Each matched group shares the same hidden type, with independent waiting times across runs.
+Suppose each individual has **at most $m$ independent exponential stages**, where the bound $m\ge2$ is known. In a matched group, the runs are independent conditional on the individual’s stage count and rates, which stay fixed across runs. The population joint distribution of $m$ matched totals uniquely determines the population distribution of stage counts and unordered rates.
 
-The threshold is sharp: with $m-1$ matched totals, two populations can have exactly the same observation law but different responses to an additive rate increase. The construction works for any positive deadline and positive boost.
+With $m-1$ runs per individual, two populations can have exactly the same distribution of observations. After the same positive increase in every stage rate, they can give different probabilities of finishing by any given positive deadline.
 
-For two stages, **two runs per matched panel, or one repeat, suffice for identification**. Pooled totals alone can leave the intervention response undetermined even when their distribution is known exactly.
+For a population with at most two stages, this means measuring each individual twice and keeping the pairing. Even the exact distribution of unpaired totals can leave the response to a rate increase undetermined.
 
 ## Estimating the response directly
 
 The intervention adds a known rate $\theta$ to each stage. An explicit unbiased statistic uses matched totals to estimate the resulting completion probability, with a uniform guarantee when the hidden rates have a positive lower bound.
 
-In the two-stage case, with rate floor $\ell$, the number of matched panels needed for error $\varepsilon$ at fixed confidence has order
-
-$$O\!\left((1+\theta/\ell)\varepsilon^{-2}\right).$$
-
-A matching lower bound holds in the specified difficult regime. The two-stage study also gives sharp bounds on intervention response from pooled totals and an extension to simultaneous estimation across deadlines.
+For two stages with rates at least $\ell$, a sample of $O((1+\theta/\ell)\varepsilon^{-2})$ independent matched pairs suffices to estimate the completion probability to error $\varepsilon$ at fixed confidence. For a boost $\theta\ge 2\ell$ and deadline $1/\theta$, this sample size is also necessary up to a constant factor for sufficiently small $\varepsilon$ and success probability $3/4$.
 
 ## Connection to existing work
 

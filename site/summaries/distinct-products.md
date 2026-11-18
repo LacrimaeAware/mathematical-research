@@ -4,22 +4,18 @@
 
 ## Result
 
-For products of three elements, the proof gives an upper bound with the same $n^{2/3}$ power as Erdős’s proposed allowance beyond the prime count, multiplied by a logarithmic factor.
+Let $A$ be a subset of the integers from $1$ to $n$ whose three-element subsets all have distinct products. Writing $\pi(n)$ for the number of primes up to $n$, the bound is
 
-Writing $\pi(n)$ for the number of primes up to $n$, the bound is
+$$|A|\le\pi(n)+O\!\left(n^{2/3}(\log n)^{1/3}\right).$$
 
-$$|A|\le\pi(n)+O\!\left(n^{2/3}(\log n)^{1/3}(\log\log n)^{2/3}\right).$$
-
-Erdős’s target is $\pi(n)+O(n^{2/3})$. The remaining difference is the factor $(\log n)^{1/3}(\log\log n)^{2/3}$ in the allowance beyond the primes.
+Erdős’s proposed upper bound is $\pi(n)+O(n^{2/3})$. The bound above still has a factor of $(\log n)^{1/3}$ in the error term.
 
 ## Condition on the products
 
-Different three-element subsets of $A$ must have different products; the two subsets may overlap. The bound holds for sufficiently large $n$, with an absolute implied constant.
+The condition includes pairs of subsets that share an element. The bound holds for sufficiently large $n$, with an absolute implied constant.
 
-[Péter Pál Pach’s work on multiplicative 3-Sidon sets](https://arxiv.org/abs/1801.08733) studies the related condition in which all six elements of a product equality are distinct. The overlap condition is part of the formulation used here.
+[Péter Pál Pach’s work on multiplicative 3-Sidon sets](https://arxiv.org/abs/1801.08733) studies the related condition in which all six elements of a product equality are distinct.
 
 ## Approach
 
 The proof represents integers by edges joining two factors. Equal products then correspond to patterns in the graph, so restricting those patterns puts a limit on how many integers the set can contain. Keeping track of the sizes and ordering of prime factors sharpens the count.
-
-The argument combines this graph bound with estimates on the available factorizations.

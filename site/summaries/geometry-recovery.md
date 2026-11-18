@@ -2,13 +2,13 @@
 
 A classifier can predict the right labels without making its underlying rule easy to inspect. This project asks when accurate predictions also determine the geometry: a collection of straight boundaries, with the label changing whenever a point crosses one of them.
 
-For Gaussian observations and a fixed number of separated boundaries, the main theorem turns small prediction error into **linearly small coefficient error**, independently of the surrounding dimension. The results also give convex reconstruction from label measurements and recovery guarantees for corrupted samples.
+For Gaussian observations and a fixed number of separated boundaries, sufficiently small prediction error bounds the **error in the polynomial coefficients** by a constant times the prediction error. That constant is independent of the surrounding dimension. The results also give convex reconstruction from label measurements and recovery guarantees for corrupted samples.
 
 ## A reconstruction example
 
 Low-degree label moments summarize how the labels correlate with polynomial features.
 
-In a quadratic example with true boundaries at $-1$ and $1$, directly treating the label moments as polynomial coefficients puts the boundaries near $\pm1.32477$ and misclassifies about 13.2% of observations. The convex reconstruction recovers the target from the same exact moments.
+In a quadratic example with true boundaries at $-1$ and $1$, directly treating the label moments as polynomial coefficients puts the boundaries near $\pm1.32477$ and misclassifies about 13.2% of the Gaussian population. Convex reconstruction recovers the target from the same exact moments. In this symmetric one-dimensional example, knowing in advance that the boundaries are at $-a$ and $a$ also lets one recover $a$ from the mean label alone.
 
 ## The coefficient guarantee
 
@@ -20,13 +20,9 @@ The norm is Gaussian $L^2$, equivalently the Euclidean distance between coeffici
 
 ## From measurements to boundaries
 
-Given the complete vector of label moments through degree $r$, a convex reconstruction procedure recovers the coefficients and then the individual boundaries. Moment error $\delta$ and optimization tolerance $\tau$ give recovery error $O_{r,T,\eta}(\delta+\tau)$.
+Suppose the vector of label moments through degree $r$ is known to Euclidean error $\delta$. At requested accuracy $\tau$, the convex reconstruction has root-mean-square coefficient error $O_{r,T,\eta}(\delta+\tau)$. For sufficiently small $\delta+\tau$, the individual boundaries can also be matched to that accuracy with constant success probability.
 
-Combining the reconstruction with robust moment estimation gives a polynomial-time procedure, for fixed model parameters, with error
-
-$$O_{r,T,\eta}\!\left(\xi\log(1/\xi)^{r/2}+\tau\right)$$
-
-under a small adversarial replacement fraction $\xi$. The robust estimation input comes from [Diakonikolas, Kane and Stewart, *Learning Geometric Concepts with Nasty Noise*](https://arxiv.org/abs/1707.01242); the coefficient and boundary recovery argument is the part developed here.
+An adversary may also replace a fraction $\xi$ of whole observations, including inputs and labels. For sufficiently small $\xi+\tau$, a refinement recovers the coefficients and individual boundaries with error $O_{r,T,\eta}(\xi+\tau)$ and constant success probability. On the same success event, the clean prediction error satisfies the same bound. This uses the Gaussian learning algorithms of Diakonikolas, Kane and Stewart. [Learning Geometric Concepts with Nasty Noise](https://arxiv.org/abs/1707.01242)
 
 ## Direct fitting and moment measurements
 
@@ -34,7 +30,7 @@ The manuscript also compares recovering from moments with fitting the observatio
 
 $$O_{r,T,\eta}\!\left(\frac{m}{N}+\frac{M\log N+\log(1/\beta)}{N}\right),\qquad M=\binom{n+r}{r},$$
 
-with probability at least $1-\beta$, in the small-error regime. Here $n$ is the input dimension. This is a statistical guarantee for an empirical minimizer; the polynomial-time construction above uses moments.
+with probability at least $1-\beta$, in the small-error regime. Here $n$ is the input dimension.
 
 A two-boundary example gives a raw-sample lower bound of order $(m+1)/N$. A separate conditioning calculation quantifies how moment inversion becomes less stable as two boundaries approach one another. Together these results distinguish the cost of limited measurements from the cost of noisy observations.
 
